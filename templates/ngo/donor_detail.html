@@ -1,0 +1,57 @@
+{% extends 'admin_panel/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="content-wrapper">
+    <section class="content">
+    <hr/>
+<div style="margin-left: 5%">
+        <h4><b>Donor Name: </b>Abhishek</h4>
+        <h4><b>Child Code: </b>MTC</h4>
+        <h4><b>Sent by: </b>See4Children</h4>
+        <h4><b>Donor Paid: </b>35000/-</h4>
+        <h4><b>Last Paid: </b>01-dec-2017</h4>
+<hr/>
+<table class="table" border="0">
+  <thead>
+    <tr>
+      <th scope="col">Index</th>
+      <th scope="col">Sent by</th>
+      <th scope="col">Reference</th>
+      <th scope="col">Month</th>
+      <th scope="col">Paid</th>
+      <th scope="col">Report</th>
+    </tr>
+  </thead>
+  <tbody>
+
+     <tr>
+      <th scope="row">01</th>
+      <td>See4Children</td>
+      <td>Abhishek</td>
+      <td>March</td>
+      <td>5000/-</td>
+      <td><button class="btn btn-primary">Create</button></td>
+     </tr>
+     <tr>
+      <th scope="row">02</th>
+      <td>See4Children</td>
+      <td>Abhishek</td>
+      <td>May</td>
+      <td>100/-</td>
+      <td><button class="btn btn-primary">Sent</button></td>
+     </tr>
+     <tr>
+      <th scope="row">03</th>
+      <td>See4Children</td>
+      <td>Abhishek</td>
+      <td>July</td>
+      <td>1000/-</td>
+      <td><button class="btn btn-primary">Sent</button></td>
+     </tr>
+  </tbody>
+</table>
+
+</div>
+    </section>
+    </div>
+{% endblock %}

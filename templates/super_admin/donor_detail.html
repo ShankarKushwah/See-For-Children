@@ -1,0 +1,40 @@
+{% extends 'super_admin/base.html' %}
+{% block content %}
+    {% load staticfiles %}
+    <div class="content-wrapper">
+    <section class="content">
+    <hr/>
+
+     <div class="row" style="margin-left: 35px;">
+        <div class="col-md-6">
+          <!-- Widget: user widget style 1 -->
+          <div class="box box-widget widget-user-2">
+            <!-- Add the bg color to the header using any of the bg-* classes -->
+            <div class="widget-user-header bg-yellow">
+              <div class="widget-user-image">
+                <img class="img-circle" src="{% static 'dist/img/user7-128x128.jpg' %}" alt="User Avatar">
+              </div>
+              <!-- /.widget-user-image -->
+              <h3 class="widget-user-username">Pooja</h3>
+                <br>
+            </div>
+            <div class="box-footer no-padding">
+              <ul class="nav nav-stacked" style="margin-left: 10px;">
+                <li><b>Child Code: </b>MTV</li>
+                <li><b>City: </b>Indore</li>
+                <li><b>Donar Paid: </b>5000/-</li>
+                <li><b>Last Paid: </b>18-January-2018</li>
+                <li><b>Total Paid: </b>23000/-</li>
+                <li><b>Duration: </b>jan to august</li>
+                </ul><br>
+                <button style="margin-left: 50%" class="btn btn-success">Chat active</button><br><br>
+            </div>
+          </div>
+          <!-- /.widget-user -->
+        </div>
+     </div>
+
+
+    </section>
+    </div>
+{% endblock %}

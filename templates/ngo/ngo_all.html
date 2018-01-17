@@ -1,0 +1,12 @@
+{% extends 'admin_panel/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="content-wrapper">
+    <section class="content">
+    <h2>All NGO</h2><hr/>
+    {% for ngo in form %}
+        {{ ngo }}<br>
+        {% endfor %}
+    </section>
+    </div>
+{% endblock %}

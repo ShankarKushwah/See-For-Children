@@ -1,0 +1,31 @@
+{% extends 'ngo/base.html' %}
+{% block content %}
+    <div class="content-wrapper" xmlns="http://www.w3.org/1999/html">
+    <section class="content">
+    <hr/>
+    <a href="/accounts/events/"><button class="btn btn-primary" style="margin-left: 300px;">Add Events</button></a><hr/>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Event Name</th>
+      <th scope="col">Event Type</th>
+      <th scope="col">Event Date</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+        {% for event in form %}
+     <tr>
+      <th scope="row">{{ event.id }}</th>
+      <td>{{ event.name }}</td>
+      <td>{{ event.type }}</td>
+      <td>{{ event.date }}</td>
+         <td><button class="btn btn-danger">Delete</button> <a href="/accounts/event_details/{{ event.id }}"><button class="btn btn-primary"> View Details</button></a></td>
+     </tr>
+        {% endfor %}
+  </tbody>
+</table>
+    </section>
+    </div>
+{% endblock %}

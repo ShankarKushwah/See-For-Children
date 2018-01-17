@@ -1,0 +1,88 @@
+{% extends 'super_admin/base.html' %}
+{% block content %}
+    {% load staticfiles %}
+    <div class="content-wrapper" xmlns="http://www.w3.org/1999/html">
+    <div class="content">
+        <h2 style="margin-left: 34%">{{ form.name }} Details</h2><hr/>
+        <div class="content">
+            <div class="row">
+                <div class="col-md-3"><img src="https://drop.ndtv.com/albums/BUSINESS/ngo-education/pratham.jpg" height="200" width="200"></div>
+                <div class="col-md-8"><h1>{{ form.ngo_name }}</h1></div>
+                <div class="col-md-8"><h3>{{ form.no_of_children }}+ children</h3></div>
+                <div class="col-md-8"><h4>{{ form.area }} area</h4></div>
+                <div class="col-md-8"><h4>4 lac/year</h4></div>
+            </div><hr/>
+            <div class="row">
+                <div class="col-md-4"><button class="btn btn-success">Activate</button></div>
+                <div class="col-md-4"><button class="btn btn-success">Deactivate</button></div>
+                <div class="col-md-4"><button class="btn btn-success">Chat Active</button></div>
+            </div><hr/>
+        </div>
+<div>
+            <h4><u><b>Shine upcoming event</b></u></h4>
+            <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Index</th>
+      <th scope="col">Event Name</th>
+      <th scope="col">Event Type</th>
+      <th scope="col">Event Date</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for event in events %}
+     <tr>
+      <th scope="row">{{ event.id }}</th>
+      <td>{{ event.name }}</td>
+      <td>{{ event.type }}</td>
+      <td>{{ event.date }}</td>
+     </tr>
+{% endfor %}
+  </tbody>
+</table>
+            <button class="btn btn-primary">Load More</button>
+</div><hr/>
+<div>
+            <h4><u><b>Shine Children list</b></u></h4>
+            <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Index</th>
+      <th scope="col">Code</th>
+      <th scope="col">Image</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+     <tr>
+      <th scope="row">1</th>
+      <td>ACD</td>
+      <td><img src="http://www.themetrognome.in/wp-content/uploads/2015/03/Lost-children-of-India.jpg" height="25" width="25"></td>
+      <td>Akhshat</td>
+      <td>8 years</td>
+     </tr>
+       <tr>
+      <th scope="row">1</th>
+      <td>ACD</td>
+      <td><img src="http://www.themetrognome.in/wp-content/uploads/2015/03/Lost-children-of-India.jpg" height="25" width="25"></td>
+      <td>Akhshat</td>
+      <td>8 years</td>
+     </tr>
+     <tr>
+      <th scope="row">1</th>
+      <td>ACD</td>
+      <td><img src="http://www.themetrognome.in/wp-content/uploads/2015/03/Lost-children-of-India.jpg" height="25" width="25"></td>
+      <td>Akhshat</td>
+      <td>8 years</td>
+     </tr>
+
+  </tbody>
+</table>
+            <button class="btn btn-primary">Load More</button>
+</div>
+
+    </div>
+</section>
+    </div>
+{% endblock %}

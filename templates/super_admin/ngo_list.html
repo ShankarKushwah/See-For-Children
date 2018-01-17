@@ -1,0 +1,31 @@
+{% extends 'super_admin/base.html' %}
+{% block content %}
+    <div class="content-wrapper">
+    <section class="content">
+        <h1 style="margin-left: 35%">NGO List</h1><hr/>
+<table class="table table-striped" style="margin-left: 2%">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Children</th>
+      <th scope="col">Contact</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+        {% for field in form %}
+     <tr>
+      <th scope="row">{{ field.id }}</th>
+      <td>{{ field.name }}</td>
+      <td>{{ field.no_of_children }}</td>
+      <td>{{ field.city }}</td>
+      <td><a href="/superadmin/ngo_detail/{{ field.id }}"><button class="btn btn-primary">View Details </button></a></td>
+     </tr>
+        {% endfor %}
+  </tbody>
+</table>
+
+    </section>
+    </div>
+{% endblock %}

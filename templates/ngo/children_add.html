@@ -1,0 +1,18 @@
+{% extends 'admin_panel/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="content-wrapper">
+    <section class="content">
+   <h1>Add Children</h1>
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                {{ field.errors }}
+                {{ field.label_tag }}<br>
+                {{ field }}<br>
+            {% endfor %}
+        <button type="submit" class="btn btn-success">Add</button>
+        </form>
+    </section>
+    </div>
+{% endblock %}

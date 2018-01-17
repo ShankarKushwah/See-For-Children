@@ -1,0 +1,37 @@
+{% extends 'ngo/base.html' %}
+{% block content %}
+    <div class="content-wrapper" xmlns="http://www.w3.org/1999/html">
+    <section class="content">
+    <h2>All Transactions</h2><hr/>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Donor</th>
+      <th scope="col">Child Code</th>
+      <th scope="col">Sent By</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Date</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+     <tr>
+      <th scope="row">01</th>
+      <td>Anurag</td>
+      <td>MVB</td>
+      <td>See4Children</td>
+      <td>5000/-</td>
+      <td>08-jan-2018</td>
+      <td><button class="btn btn-primary">View Details</button></td>
+     </tr>
+  </tbody>
+</table><hr/>
+        <section class="content">
+            <h3>Search by date</h3>
+            <p>from <input type="date"> to <input type="date"> <button>Search</button></p>
+        </section>
+    </section>
+    </div>
+{% endblock %}

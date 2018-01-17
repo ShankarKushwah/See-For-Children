@@ -1,0 +1,29 @@
+{% extends 'ngo/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="content-wrapper">
+    <section class="content">
+    <h2>Notification page</h2><hr/>
+   <input type="checkbox" onClick="toggle(this)">
+  <select name="cars">
+    <option value="volvo">Action</option>
+    <option value="saab">Delete</option>
+  </select>
+  <button> Submit</button><hr/>
+        <p><input type="checkbox" name="foo" value="1"> Rahul Sent you Message...!!!</p>
+        <p><input type="checkbox" name="foo" value="2"> Rahul Sent you Message...!!!</p>
+        <p><input type="checkbox" name="foo" value="3"> Rahul Sent you Message...!!!</p>
+        <p><input type="checkbox" name="foo" value="4"> Rahul Sent you Message...!!!</p>
+
+
+<script language="JavaScript">
+function toggle(source) {
+  checkboxes = document.getElementsByName('foo');
+  for(var i=0, n=checkboxes.length;i<n;i++) {
+    checkboxes[i].checked = source.checked;
+  }
+}
+</script>
+    </section>
+    </div>
+{% endblock %}

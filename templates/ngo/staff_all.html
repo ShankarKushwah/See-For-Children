@@ -1,0 +1,41 @@
+{% extends 'ngo/base.html' %}
+{% block content %}
+    <div class="content-wrapper" xmlns="http://www.w3.org/1999/html">
+    <section class="content">
+    <h2>All Staff</h2><hr/>
+
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Work</th>
+      <th scope="col">Image</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for s in staff %}
+
+      <tr>
+      <th>{{ s.id }}</th>
+      <td>{{ s.name }}</td>
+      <td>{{ s.work }}</td>
+      {% if s.image %}
+      <td><img src="{{ s.image.url }}" alt="Image" height="25px" width="25px"></td>
+         {% else %}
+             <td><p>No image</p></td>
+         {% endif %}
+      <td><a href="/accounts/staff_detail/{{ s.id }}"><button class="btn btn-primary">View Details</button></a> <button class="btn btn-danger"> Delete</button> </td>
+      </tr>
+
+  {% endfor %}
+
+  </tbody>
+    </table>
+
+
+    </section>
+    </div>
+{% endblock %}

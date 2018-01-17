@@ -1,0 +1,30 @@
+{% extends 'super_admin/base.html' %}
+{% block content %}
+    <div class="content-wrapper">
+    <section class="content">
+        <h1 style="margin-left: 34%">Donor's List</h1><hr/>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Child Code</th>
+      <th scope="col">Name</th>
+      <th scope="col">City</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+        {% for field in form %}
+     <tr>
+      <th scope="row">{{ field.id }}</th>
+      <td>{{ field.id }}</td>
+      <td>{{ field.donor_name }}</td>
+      <td>{{ field.donor_address }}</td>
+      <td><a href="/superadmin/donor_detail/"><button class="btn btn-primary">View Details </button></a></td>
+     </tr>
+        {% endfor %}
+  </tbody>
+</table>
+    </section>
+    </div>
+{% endblock %}

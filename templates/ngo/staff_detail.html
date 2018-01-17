@@ -1,0 +1,19 @@
+{% extends 'ngo/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="content-wrapper">
+    <section class="content">
+    <h2 style="margin-left: 30%">{{ staff.name }}'s Profile</h2><hr/>
+    <div style="margin-left:5%">
+    {% if staff.image %}
+        <img src="{% if staff %}{{ staff.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" height="120" width="120">
+    {% else %}
+    <img src="" alt="No image">
+    {% endif %}
+        <h3><b>Name: </b>{{ staff.name }}</h3>
+        <p><b>Work: </b>{{ staff.work }}</p>
+        <p><b>Description: </b>{{ staff.description }}</p>
+    </div>
+    </section>
+    </div>
+{% endblock %}

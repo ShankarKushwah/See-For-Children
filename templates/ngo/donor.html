@@ -1,0 +1,32 @@
+{% extends 'ngo/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="content-wrapper">
+    <section class="content">
+        <h2>List of Donors</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Contact</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+        {% for field in form %}
+     <tr>
+      <th scope="row">{{ field.id }}</th>
+      <td>{{ field.donor_name }}</td>
+      <td>{{ field.donor_address }}</td>
+      <td>{{ field.donor_contact }}</td>
+      <td><a href="/accounts/donor_detail/{{ c.id }}"><button class="btn btn-primary">View Details </button></a></td>
+     </tr>
+        {% endfor %}
+  </tbody>
+</table>
+
+    </section>
+    </div>
+{% endblock %}

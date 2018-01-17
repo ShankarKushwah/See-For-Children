@@ -1,0 +1,20 @@
+{% extends 'ngo/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="content-wrapper">
+    <section class="content">
+    <h2 style="margin-left: 30%">{{ child.name }} history</h2><hr/>
+    <div style="margin-left:5%">
+    {% if child.image %}
+        <img src="{% if child %}{{ child.image.url }}{% endif %}" height="120" width="120">
+    {% else %}
+    <img src="" alt="No image">
+    {% endif %}
+        <h3><b>Name: </b>{{ child.name }}</h3>
+        <p><b>Description: </b>{{ child.description }}</p>
+        <p><a href="/edit_children/{{ child.id }}">edit </a><a href="/delete_children/"> delete</a></p>
+    </div>
+
+    </section>
+    </div>
+{% endblock %}

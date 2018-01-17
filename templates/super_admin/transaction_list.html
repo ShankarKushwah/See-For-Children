@@ -1,0 +1,51 @@
+{% extends 'super_admin/base.html' %}
+{% block content %}
+    <div class="content-wrapper">
+    <section class="content">
+        <h2>Recent Transactions</h2>
+
+<table class="table table-striped">
+   <thead>
+    <tr>
+      <th scope="col">Index</th>
+      <th scope="col">Donor</th>
+      <th scope="col">Child Code</th>
+      <th scope="col">NGO</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Date</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+    <tr>
+      <th scope="row">1</th>
+      <td>Anurag</td>
+      <td>MVB</td>
+      <td>Safe4Child</td>
+      <td>5000/-</td>
+      <td>08-jan-2018</td>
+      <td><button class="btn btn-primary">Full Details</button></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Mahendra</td>
+      <td>WER</td>
+      <td>Crack & Jack</td>
+      <td>1000/-</td>
+      <td>08-jan-2018</td>
+      <td><button class="btn btn-primary">Full Details</button></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Kushal</td>
+      <td>TYU</td>
+      <td>Safe4Child</td>
+      <td>2500/-</td>
+      <td>08-jan-2018</td>
+      <td><button class="btn btn-primary">Full Details</button></td>
+    </tr>
+</table>
+
+
+    </section>
+    </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+    <div class="content-wrapper">
+
+    <section class="content-header">
+
+    </section><hr/>
+    <section class="content" style="margin-left: 300px;">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title" style="margin-left: 175px;">Login here</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+              <input type="hidden" name="next" value="/" />
+              <div class="box-body">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="id_username">
+                                Username:
+                            </label>
+                            <div class="col-sm-10">
+                                <input id="id_username" maxlength="30" class="form-control" name="username" type="text">
+                            </div>
+                        </div><hr/>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="id_password">
+                                Password:
+                            </label>
+                            <div class="col-sm-10">
+                                <input id="id_password" maxlength="30" class="form-control" name="password" type="password">
+                            </div>
+                        </div>
+              </div>
+                <div class="box-footer">
+                <button type="submit" class="btn btn-primary" style="margin-left: 200px;"> Login </button><br>
+                      Don't have an account<a href="/accounts/signup/"> Sign up</a>
+              </div>
+            </form>
+          </div>
+            </div>
+        </div>
+    </section>
+    </div>
+{% endblock %}

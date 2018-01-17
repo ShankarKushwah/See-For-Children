@@ -1,0 +1,23 @@
+{% extends 'admin_panel/base.html' %}
+{% block content %}
+    <div class="content-wrapper">
+    <section class="content">
+        <h1>Edit Profile</h1>
+        <div class="container">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.username.label_tag }}<br>
+        {{ form.username }}<br><br>
+        {{ form.email.label_tag }}<br>
+        {{ form.email }}<br><br>
+        {{ form.first_name.label_tag }}<br>
+        {{ form.first_name }}<br><br>
+        {{ form.last_name.label_tag }}<br>
+        {{ form.last_name }}<br><br>
+        <button type="submit" class="btn btn-success">Edit</button>
+    </form>
+    <br>
+</div>
+    </section>
+    </div>
+{% endblock %}

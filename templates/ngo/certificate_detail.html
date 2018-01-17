@@ -1,0 +1,36 @@
+{% extends 'admin_panel/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="content-wrapper">
+    <section class="content">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NGO Name</th>
+      <th scope="col">Donor Name</th>
+      <th scope="col">Donation Amount</th>
+      <th scope="col">Created on</th>
+      <th scope="col">Issued on</th>
+      <th scope="col">Child Code</th>
+      <th scope="col">Child Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ form.id }}</td>
+      <td>{{ form.ngo_name }}</td>
+      <td>{{ form.donor_name }}</td>
+      <td>{{ form.donation_amount }}</td>
+      <td>{{ form.month }}</td>
+      <td>{{ form.certificate_issue_date }}</td>
+      <td>{{ form.sponsored_child_code }}</td>
+      <td>{{ form.sponsored_child_name }}</td>
+    </tr>
+
+  </tbody>
+</table>
+    </section>
+    </div>
+{% endblock %}
