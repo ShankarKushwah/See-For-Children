@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import render, get_object_or_404, redirect
-from NGO.models import NGO, Events
+from NGO.models import NGO, Events, Donor
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 
@@ -25,7 +25,8 @@ def event_list(request):
 
 @staff_member_required
 def donor_list(request):
-    return render(request, 'super_admin/donor_list.html')
+    form = Donor.objects.all()
+    return render(request, 'super_admin/donor_list.html', {'form': form})
 
 
 @staff_member_required

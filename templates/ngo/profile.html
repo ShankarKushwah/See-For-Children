@@ -3,12 +3,131 @@
     {% csrf_token %}
 <div class="content-wrapper">
 <section class="content">
-    <h1>Profile Page</h1>
-    <h3><b>Username:</b> {{ user.username }}</h3>
-    <h4><b>Email:</b> {{ user.email }} </h4>
-    <h4><b>First Name:</b> {{ user.first_name }}</h4>
-    <h4><b>last Name:</b> {{ user.last_name }}</h4>
-    <p><a href="/accounts/">Edit profile</a></p>
+    <div class="container">
+    	<div class="row">
+		<div class="col-md-2">
+			<img src="https://www.legalforms.ng/wp-content/uploads/2016/03/NGO.jpg" height="120" width="120">
+		</div>
+		<div class="col-md-4">
+			<h3>Safe4Child</h3>
+			<h4>200+ children</h4>
+			<h4>3000 sqr.feet area</h4>
+			<h4>4 lac/year</h4>
+		</div><br>
+		<div class="col-md-2">
+			<button class="btn btn-success">Activate</button><br>
+		</div><br><br>
+		<div class="col-md-2">
+			<button class="btn btn-success">Deavtivate</button><br>
+		</div><br><br>
+		<div class="col-md-2">
+			<button class="btn btn-success">Chat Active</button><br>
+		</div>
+    	</div>
+    </div>
+
+</section>
+<section class="content">
+	<h2><u>Safe4Child upcoming events</u></h2>
+	<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Index</th>
+      <th scope="col">Event name</th>
+      <th scope="col">Event type</th>
+      <th scope="col">Event date</th>
+    </tr>
+  </thead>
+  <tbody>
+        
+     <tr>
+      <th scope="row">1</th>
+      <td>Diwali</td>
+      <td>Singing/Dancing</td>
+      <td>12-oct-2018</td>
+     </tr>
+     <tr>
+      <th scope="row">2</th>
+      <td>Diwali</td>
+      <td>Singing/Dancing</td>
+      <td>12-oct-2018</td>
+     </tr>
+     <tr>
+      <th scope="row">3</th>
+      <td>Diwali</td>
+      <td>Singing/Dancing</td>
+      <td>12-oct-2018</td>
+     </tr>
+     <tr>
+      <th scope="row">4</th>
+      <td>Diwali</td>
+      <td>Singing/Dancing</td>
+      <td>12-oct-2018</td>
+     </tr>
+     <tr>
+      <th scope="row">5</th>
+      <td>Diwali</td>
+      <td>Singing/Dancing</td>
+      <td>12-oct-2018</td>
+     </tr>
+        
+  </tbody>
+</table>
+<button class="btn btn-success">Load more</button>
+</section>
+<section class="content">
+	<h2><u>Safe4Child Children list</u></h2>
+	<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Index</th>
+      <th scope="col">Code</th>
+      <th scope="col">Image</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+        
+     <tr>
+      <th scope="row">1</th>
+      <td>ABC</td>
+      <td><img src="https://cdn.pixabay.com/photo/2016/11/29/20/22/child-1871104_960_720.jpg" height="20" width="20"></td>
+      <td>Anu</td>
+      <td>11</td>
+     </tr>
+     <tr>
+      <th scope="row">2</th>
+      <td>ABC</td>
+      <td><img src="https://cdn.pixabay.com/photo/2016/11/29/20/22/child-1871104_960_720.jpg" height="20" width="20"></td>
+      <td>Pooja</td>
+      <td>11</td>
+     </tr>
+     <tr>
+      <th scope="row">3</th>
+      <td>ABC</td>
+      <td><img src="https://cdn.pixabay.com/photo/2016/11/29/20/22/child-1871104_960_720.jpg" height="20" width="20"></td>
+      <td>Ruhi</td>
+      <td>11</td>
+     </tr>
+     <tr>
+      <th scope="row">4</th>
+      <td>ABC</td>
+      <td><img src="https://cdn.pixabay.com/photo/2016/11/29/20/22/child-1871104_960_720.jpg" height="20" width="20"></td>
+      <td>shreya</td>
+      <td>11</td>
+     </tr>
+     <tr>
+      <th scope="row">5</th>
+      <td>ABC</td>
+      <td><img src="https://cdn.pixabay.com/photo/2016/11/29/20/22/child-1871104_960_720.jpg" height="20" width="20"></td>
+      <td>Chhaya</td>
+      <td>11</td>
+     </tr>
+
+  </tbody>
+</table>
+<button class="btn btn-success">Load more</button>
 </section>
 
 </div>
