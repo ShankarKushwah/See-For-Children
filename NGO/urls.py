@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^staff_list/$', views.staff, name='staff_list'),
     url(r'^staff_detail/(?P<id>\d+)/$', views.staff_detail, name='staff_detail'),
     url(r'^donor_list/$', views.donor_list, name='donor_list'),
+    url(r'^donor_detail/(?P<id>\d+)/$', views.donor_detail, name='donor_detail'),
     url(r'^notification_list/$', views.notification_list, name='notification_list'),
     url(r'^transaction/$', views.transaction, name='transaction'),
     url(r'^profile/$', views.profile, name='profile'),

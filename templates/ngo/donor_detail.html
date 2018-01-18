@@ -1,15 +1,15 @@
-{% extends 'admin_panel/base.html' %}
+{% extends 'ngo/base.html' %}
 {% load static %}
 {% block content %}
     <div class="content-wrapper">
     <section class="content">
     <hr/>
 <div style="margin-left: 5%">
-        <h4><b>Donor Name: </b>Abhishek</h4>
-        <h4><b>Child Code: </b>MTC</h4>
+        <h4><b>Donor Name: </b>{{form.name}}</h4>
+        <h4><b>Child Code: </b>{{form.child_code}}</h4>
         <h4><b>Sent by: </b>See4Children</h4>
-        <h4><b>Donor Paid: </b>35000/-</h4>
-        <h4><b>Last Paid: </b>01-dec-2017</h4>
+        <h4><b>Donor Paid: </b>{{form.donor_paid}}</h4>
+        <h4><b>Last Paid: </b>{{form.last_paid}}</h4>
 <hr/>
 <table class="table" border="0">
   <thead>

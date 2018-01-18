@@ -69,3 +69,15 @@ class Staff(models.Model):
 
     def __str__(self):
         return self.name
+
+class Donor(models.Model):
+    name = models.CharField(max_length=40)
+    child_code = models.CharField(max_length=3)
+    aadhar_no = models.CharField(max_length=20)
+    pan_card = models.CharField(max_length=20)
+    city = models.CharField(max_length=10)
+    donor_paid = models.CharField(max_length=5)
+    last_paid = models.DateField()
+    total_paid = models.CharField(max_length=5)
+    duration = models.CharField(max_length=20)
+    image = models.ImageField(upload_to='donor/', blank=True)
