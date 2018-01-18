@@ -5,14 +5,19 @@
     <section class="content">
     <hr/>
 <div style="margin-left: 5%">
+  <div class="col-md-2">
+        <img src="{{ form.image.url}}" width="150" height="150">
+  </div>
+  <div class="col-md-8">
         <h4><b>Donor Name: </b>{{form.name}}</h4>
         <h4><b>Child Code: </b>{{form.child_code}}</h4>
         <h4><b>Sent by: </b>See4Children</h4>
         <h4><b>Donor Paid: </b>{{form.donor_paid}}</h4>
-        <h4><b>Last Paid: </b>{{form.last_paid}}</h4>
+        <h4><b>Last Paid: </b>{{form.last_paid}}</h4><br>
+  </div>
 <hr/>
 <table class="table" border="0">
-  <thead>
+  <thead><br>
     <tr>
       <th scope="col">Index</th>
       <th scope="col">Sent by</th>
