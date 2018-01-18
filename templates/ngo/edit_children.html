@@ -1,4 +1,4 @@
-{% extends 'admin_panel/base.html' %}
+{% extends 'ngo/base.html' %}
 {% load static %}
 {% block content %}
     <div class="content-wrapper">
@@ -6,18 +6,10 @@
     <h2>Edit Children</h2><hr/>
         <form method="post">
         {% csrf_token %}
-        {{ form.c_name.label_tag }}<br>
-        {{ form.c_name }}<br><br>
-        {{ form.c_place_found.label_tag }}<br>
-        {{ form.c_place_found }}<br><br>
-        {{ form.c_dob.label_tag }}<br>
-        {{ form.c_dob }}<br><br>
-        {{ form.c_gender.label_tag }}<br>
-        {{ form.c_gender }}<br><br>
-        {{ form.c_image.label_tag }}<br>
-        {{ form.c_image }}<br><br>
-        {{ form.description.label_tag }}<br>
-        {{ form.description }}<br><br>
+        {% for fields in form %}
+        {{ fields.label_tag }}<br>
+        {{ fields }}<br><br>
+        {% endfor %}
         <button type="submit" class="btn btn-success">Update</button>
     </form>
     </section>

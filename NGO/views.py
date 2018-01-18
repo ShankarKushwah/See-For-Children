@@ -1,7 +1,8 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from NGO.models import NGO, Events, Children, Staff
+from .forms import EventForm, EditChildrenForm, ChildrenForm
 
 
 @login_required
@@ -25,6 +26,25 @@ def event_list(request):
     })
 
 
+def events_add(request):
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/event_list/')
+    else:
+        form = EventForm()
+    return render(request, 'ngo/events.html', {'form': form})
+
+
+def event_details(request, id):
+        form = get_object_or_404(Events, id=id)
+        return render(request,
+                      'ngo/event_details.html',
+                      {'form': form})
+
+
+
 def chat(request):
     return render(request, 'ngo/chat.html')
 
@@ -39,6 +59,33 @@ def children_detail(request, id):
     return render(request,
                   'ngo/children_detail.html',
                   {'child': child})
+
+
+def children_add(request):
+    if request.method == 'POST':
+        form = ChildrenForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/children_list/')
+    else:
+        form = ChildrenForm()
+        return render(request, 'ngo/children_add.html', {'form': form})
+
+
+def children_edit(request, id):
+    instance = get_object_or_404(Children, id=id)
+    form = ChildrenForm(request.POST or None, instance=instance)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        return redirect('/children_list')
+
+    context = {
+        "name": instance.name,
+        "instance": instance,
+        "form": form,
+    }
+    return render(request, "ngo/edit_children.html", context)
 
 
 def staff(request):

@@ -3,7 +3,7 @@
     <div class="content-wrapper" xmlns="http://www.w3.org/1999/html">
     <section class="content">
     <hr/>
-    <a href="/accounts/events/"><button class="btn btn-primary" style="margin-left: 300px;">Add Events</button></a><hr/>
+    <a href="/events_add/"><button class="btn btn-primary" style="margin-left: 300px;">Add Events</button></a><hr/>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -21,7 +21,7 @@
       <td>{{ event.name }}</td>
       <td>{{ event.type }}</td>
       <td>{{ event.date }}</td>
-         <td><button class="btn btn-danger">Delete</button> <a href="/accounts/event_details/{{ event.id }}"><button class="btn btn-primary"> View Details</button></a></td>
+         <td><button class="btn btn-danger">Delete</button> <a href="/event_details/{{ event.id }}"><button class="btn btn-primary"> View Details</button></a></td>
      </tr>
         {% endfor %}
   </tbody>
