@@ -1,1 +1,1 @@
-web: gunicorn See4Chidren2.wsgi --log-file -
+web: gunicorn NGO.wsgi --log-file -
