@@ -13,5 +13,6 @@ urlpatterns = [
     url(r'^donor_list/$', views.donor_list, name='donor_list'),
     url(r'^notification_list/$', views.notification_list, name='notification_list'),
     url(r'^transaction/$', views.transaction, name='transaction'),
+    url(r'^profile/$', views.profile, name='profile'),
 
 ]

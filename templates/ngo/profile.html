@@ -1,4 +1,4 @@
-{% extends 'admin_panel/base.html' %}
+{% extends 'ngo/base.html' %}
 {% block content %}
     {% csrf_token %}
 <div class="content-wrapper">
@@ -8,12 +8,7 @@
     <h4><b>Email:</b> {{ user.email }} </h4>
     <h4><b>First Name:</b> {{ user.first_name }}</h4>
     <h4><b>last Name:</b> {{ user.last_name }}</h4>
-    <p><a href="/accounts/edit_profile/">Edit profile</a></p>
-</section>
-<section class="content">
-    <h1>NGO details</h1>
-
-
+    <p><a href="/accounts/">Edit profile</a></p>
 </section>
 
 </div>

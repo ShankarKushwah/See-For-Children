@@ -63,3 +63,7 @@ def notification_list(request):
 
 def transaction(request):
     return render(request, 'ngo/transaction.html')
+
+
+def profile(request):
+    return render(request, 'ngo/profile.html')
