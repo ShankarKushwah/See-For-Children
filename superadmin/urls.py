@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^transaction_list/$', views.transaction_list, name='transaction_list'),
     url(r'^transaction_detail/(?P<id>\d+)/$', views.transaction_detail, name='transaction_detail'),
     url(r'^notifications/$', views.notification, name='notification'),
+    url(r'^notification_detail/$', views.notification_detail, name='notification_detail'),
     url(r'^change_password/$', views.change_password, name='change_password'),
 
 ]

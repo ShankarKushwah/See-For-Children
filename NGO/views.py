@@ -1,13 +1,21 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout
+from django.db.models import Q
 
-from NGO.models import NGO, Events, Children, Staff, Donor
-from .forms import EventForm, EditChildrenForm, ChildrenForm
+from NGO.models import NGO, Events, Children, Staff, Donor, Certificate
+from .forms import EventForm, ChildrenForm, CertificateForm
 
 
 @login_required
 def home(request):
-    return render(request, 'ngo/index.html')
+    if not request.user.is_authenticated():
+        return render(request, 'accounts/login.html')
+    else:
+        ngo = NGO.objects.filter(user=request.user)
+        ch = Children.objects.filter(ngo=ngo)
+        return render(request, 'ngo/index.html', {'ngo': ngo, 'ch': ch})
 
 
 @login_required
@@ -55,8 +63,20 @@ def chat(request):
 
 @login_required
 def children(request):
-    child = Children.objects.filter()
-    return render(request, 'ngo/children_all.html', {'child': child})
+    if not request.user.is_authenticated():
+        return render(request, 'accounts/login.html')
+    else:
+        try:
+            child_ids = []
+            for ngo in NGO.objects.filter(user=request.user):
+                for child in ngo.children_set.all():
+                    child_ids.append(child.pk)
+            user_child = Children.objects.filter(pk__in=child_ids)
+        except NGO.DoesNotExist:
+            user_child = []
+        return render(request, 'ngo/children_all.html', {
+            'child_list': user_child,
+        })
 
 
 @login_required
@@ -135,3 +155,27 @@ def transaction(request):
 @login_required
 def profile(request):
     return render(request, 'ngo/profile.html')
+
+
+@login_required
+def certificate(request):
+    certificate = Certificate.objects.filter()
+    return render(request, 'ngo/certificate.html', {'form': certificate})
+
+
+@login_required
+def certificate_detail(request, id):
+    certificate = get_object_or_404(Certificate, id=id)
+    return render(request, 'ngo/certificate_detail.html', {'form': certificate})
+
+
+@login_required
+def certificate_add(request):
+    if request.method == 'POST':
+        form = CertificateForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/certificate/')
+    else:
+        form = CertificateForm()
+        return render(request, 'ngo/certificate_add.html', {'form': form})

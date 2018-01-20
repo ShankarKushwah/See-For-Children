@@ -4,30 +4,15 @@
     <section class="content">
         <h1 style="margin-left: 35%">Send Invoice</h1>
         <div style="margin-left: 10%">
-            <table class="table table-striped">
-            <tr>
-                <td>Select NGO</td><td><input type="text"></td>
-            </tr>
-            <tr>
-                <td>Child Code</td><td><input type="text"></td>
-            </tr>
-                <tr>
-                <td>Donar ID</td><td><input type="text"></td>
-            </tr>
-                <tr>
-                <td>Invoice</td><td><input type="file"></td>
-            </tr>
-                <tr>
-                <td>Donation Month</td><td><input type="date"></td>
-            </tr>
-                <tr>
-                <td>Date</td><td><input type="date"></td>
-            </tr>
-                <tr>
-                <td>Paid</td><td><input type="text"></td>
-            </tr>
-            </table><br>
-            <button style="margin-left: 30%" class="btn btn-primary">Send</button>
+            <form method="post">
+            {% csrf_token %}
+                {% for fields in form %}
+                    {{ fields.label_tag }}<br>
+                    {{ fields }}<br>
+                {% endfor %}
+            <br>
+            <button type="submit" class="btn btn-primary">Send</button>
+            </form>
         </div>
 
 

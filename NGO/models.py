@@ -1,8 +1,10 @@
 import uuid
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class NGO(models.Model):
+    user = models.ForeignKey(User, default=1)
     name = models.CharField(max_length=30)
     email = models.EmailField()
     established = models.DateField()
@@ -16,7 +18,7 @@ class NGO(models.Model):
     image = models.FileField(upload_to='ngo/')
 
     def __str__(self):
-        return self.name + " " + self.city
+        return self.name
 
 
 class Children(models.Model):
@@ -70,6 +72,7 @@ class Staff(models.Model):
     def __str__(self):
         return self.name
 
+
 class Donor(models.Model):
     name = models.CharField(max_length=40)
     child_code = models.CharField(max_length=3)
@@ -81,3 +84,33 @@ class Donor(models.Model):
     total_paid = models.CharField(max_length=5)
     duration = models.CharField(max_length=20)
     image = models.ImageField(upload_to='donor/', blank=True)
+
+
+class Certificate(models.Model):
+    ngo_name = models.ForeignKey(NGO, on_delete=models.CASCADE)
+    donor_name = models.CharField(max_length=100)
+    donation_amount = models.CharField(max_length=10)
+    month = models.CharField(choices=(
+        ('jan', "January",),
+        ('feb', "February"),
+        ('mar', "March"),
+        ('apr', "April"),
+        ('may', "May"),
+        ('jun', "June"),
+        ('jul', "July"),
+        ('aug', "August"),
+        ('sep', "September"),
+        ('oct', "October"),
+        ('nov', "November"),
+        ('dec', "December"),
+
+    ),
+        max_length=10
+    )
+    certificate_issue_date = models.DateField()
+    sponsored_child_code = models.CharField(max_length=100)
+    sponsored_child_name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.donor_name
+

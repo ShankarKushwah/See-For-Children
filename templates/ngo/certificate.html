@@ -1,4 +1,4 @@
-{% extends 'admin_panel/base.html' %}
+{% extends 'ngo/base.html' %}
 {% load static %}
 {% block content %}
     <div class="content-wrapper">
@@ -16,20 +16,20 @@
     </tr>
   </thead>
   <tbody>
-
+{% for c in form %}
      <tr>
-      <th scope="row">01</th>
-      <td>Abhishek</td>
-      <td>MTC</td>
+      <th scope="row">{{ c.id }}</th>
+      <td>{{ c.donor_name }}</td>
+      <td>{{ c.month.capitalize }}</td>
       <td><img src="{% static 'pdf.svg' %}" height="25px" width="25px"></td>
-      <td>08-jan-2018</td>
-      <td><button>Resent</button></td>
+      <td>{{ c.certificate_issue_date }}</td>
+      <td><button class="btn btn-primary">Resent</button></td>
      </tr>
-
+{% endfor %}
   </tbody>
 </table>
     <section class="content">
-        <button style="margin-left: 35%">Load Older</button>
+        <button class="btn btn-primary" style="margin-left: 35%">Load Older</button> <a href="/certificate_add/"><button class="btn btn-primary"> Add Certificate</button></a>
     </section>
 </section>
     </div>

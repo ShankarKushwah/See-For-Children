@@ -1,9 +1,11 @@
 from django.contrib import messages
 from django.contrib.admin.views.decorators import staff_member_required
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from NGO.models import NGO, Events, Donor
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
+from superadmin.forms import InvoiceForm
 
 
 @staff_member_required
@@ -51,7 +53,15 @@ def ngo_detail(request, id):
 
 @staff_member_required
 def send_detail(request):
-    return render(request, 'super_admin/send_detail.html')
+    if request.method == 'POST':
+        form = InvoiceForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("send...")
+    else:
+        form = InvoiceForm()
+        return render(request, 'super_admin/send_detail.html', {'form': form})
+
 
 
 @staff_member_required
@@ -67,6 +77,11 @@ def transaction_detail(request):
 @staff_member_required
 def notification(request):
     return render(request, 'super_admin/notification.html')
+
+
+@staff_member_required
+def notification_detail(request):
+    return render(request, 'super_admin/notification_detail.html')
 
 
 @staff_member_required

@@ -5,6 +5,8 @@ from . import views
 urlpatterns = [
     url(r'^$', views.home, name='index'),
     url(r'^chat_list/$', views.chat, name='chat_list'),
+    url(r'^certificate/$', views.certificate, name='certificate'),
+    url(r'^certificate_add/$', views.certificate_add, name='certificate_add'),
     url(r'^event_list/$', views.event_all, name='event_list'),
     url(r'^event_details/(?P<id>\d+)/$', views.event_details, name='event_details'),
     url(r'^events_add/$', views.events_add, name='events_add'),
