@@ -75,7 +75,7 @@ def children(request):
         except NGO.DoesNotExist:
             user_child = []
         return render(request, 'ngo/children_all.html', {
-            'child_list': user_child,
+            'child': user_child,
         })
 
 
@@ -89,14 +89,26 @@ def children_detail(request, id):
 
 @login_required
 def children_add(request):
-    if request.method == 'POST':
-        form = ChildrenForm(request.POST)
+        form = ChildrenForm(request.POST or None)
+        ngo = get_object_or_404(NGO, user=request.user)
         if form.is_valid():
-            form.save()
-            return redirect('/children_list/')
-    else:
-        form = ChildrenForm()
-        return render(request, 'ngo/children_add.html', {'form': form})
+            ngo_child = ngo.children_set.all()
+            for c in ngo_child:
+                if c.id == form.cleaned_data.get("name"):
+                    context = {
+                        'ngo': ngo,
+                        'form': form
+                    }
+                    return render(request, 'ngo/children_add.html', context)
+            child = form.save(commit=False)
+            child.ngo = ngo
+            child.save()
+            return render(request, 'ngo/children_detail.html', {'ngo': ngo})
+        context = {
+            'ngo': ngo,
+            'form': form,
+        }
+        return render(request, 'ngo/children_add.html', context)
 
 
 @login_required
