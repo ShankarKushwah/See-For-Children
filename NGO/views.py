@@ -9,10 +9,12 @@ from .forms import EventForm, EditChildrenForm, ChildrenForm
 def home(request):
     return render(request, 'ngo/index.html')
 
+
 @login_required
 def event_all(request):
     event = Events.objects.all()
     return render(request, 'ngo/upcoming_event.html', {'form': event})
+
 
 @login_required
 def event_list(request):
@@ -25,6 +27,7 @@ def event_list(request):
         'event_list': ngo_event,
     })
 
+
 @login_required
 def events_add(request):
     if request.method == 'POST':
@@ -36,22 +39,25 @@ def events_add(request):
         form = EventForm()
     return render(request, 'ngo/events.html', {'form': form})
 
+
 @login_required
 def event_details(request, id):
-        form = get_object_or_404(Events, id=id)
-        return render(request,
-                      'ngo/event_details.html',
-                      {'form': form})
+    form = get_object_or_404(Events, id=id)
+    return render(request,
+                  'ngo/event_details.html',
+                  {'form': form})
 
 
 @login_required
 def chat(request):
     return render(request, 'ngo/chat.html')
 
+
 @login_required
 def children(request):
-    child = Children.objects.all()
+    child = Children.objects.filter()
     return render(request, 'ngo/children_all.html', {'child': child})
+
 
 @login_required
 def children_detail(request, id):
@@ -59,6 +65,7 @@ def children_detail(request, id):
     return render(request,
                   'ngo/children_detail.html',
                   {'child': child})
+
 
 @login_required
 def children_add(request):
@@ -70,6 +77,7 @@ def children_add(request):
     else:
         form = ChildrenForm()
         return render(request, 'ngo/children_add.html', {'form': form})
+
 
 @login_required
 def children_edit(request, id):
@@ -87,10 +95,12 @@ def children_edit(request, id):
     }
     return render(request, "ngo/edit_children.html", context)
 
+
 @login_required
 def staff(request):
     staffs = Staff.objects.all()
     return render(request, 'ngo/staff_all.html', {'staff': staffs})
+
 
 @login_required
 def staff_detail(request, id):
@@ -98,6 +108,7 @@ def staff_detail(request, id):
     return render(request,
                   'ngo/staff_detail.html',
                   {'staff': staff})
+
 
 @login_required
 def donor_list(request):
@@ -115,9 +126,11 @@ def donor_detail(request, id):
 def notification_list(request):
     return render(request, 'ngo/notification.html')
 
+
 @login_required
 def transaction(request):
     return render(request, 'ngo/transaction.html')
+
 
 @login_required
 def profile(request):
