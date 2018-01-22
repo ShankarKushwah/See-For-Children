@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class EventForm(forms.ModelForm):
     class Meta:
         model = Events
-        fields = ['name', 'date', 'place', 'description', 'organizer', 'time', 'type']
+        fields = ['name', 'date', 'place', 'description', 'organizer', 'time', 'type', 'image']
 
 
 class ChildrenForm(forms.ModelForm):

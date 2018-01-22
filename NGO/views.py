@@ -19,46 +19,11 @@ def home(request):
 
 
 @login_required
-def event_all(request):
-    event = Events.objects.all()
-    return render(request, 'ngo/upcoming_event.html', {'form': event})
-
-
-@login_required
-def event_list(request):
-    event_ids = []
-    for ngo in NGO.objects.filter():
-        for event in ngo.events_set.all():
-            event_ids.append(event.pk)
-    ngo_event = Events.objects.filter(pk__in=event_ids)
-    return render(request, 'ngo/event_list.html', {
-        'event_list': ngo_event,
-    })
-
-
-@login_required
-def events_add(request):
-    if request.method == 'POST':
-        form = EventForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/event_list/')
-    else:
-        form = EventForm()
-    return render(request, 'ngo/events.html', {'form': form})
-
-
-@login_required
 def event_details(request, id):
     form = get_object_or_404(Events, id=id)
     return render(request,
                   'ngo/event_details.html',
                   {'form': form})
-
-
-@login_required
-def chat(request):
-    return render(request, 'ngo/chat.html')
 
 
 @login_required
@@ -77,6 +42,24 @@ def children(request):
         return render(request, 'ngo/children_all.html', {
             'child': user_child,
         })
+
+
+@login_required
+def event_list(request):
+    if not request.user.is_authenticated():
+        return render(request, 'accounts/login.html')
+    else:
+        try:
+            event_ids = []
+            for ngo in NGO.objects.filter(user=request.user):
+                for event in ngo.events_set.all():
+                    event_ids.append(event.pk)
+            user_event = Events.objects.filter(pk__in=event_ids)
+        except NGO.DoesNotExist:
+            user_event = []
+        return render(request, 'ngo/upcoming_event.html', {
+                'event_list': user_event,
+            })
 
 
 @login_required
@@ -109,6 +92,30 @@ def children_add(request):
             'form': form,
         }
         return render(request, 'ngo/children_add.html', context)
+
+
+@login_required
+def events_add(request):
+    form = EventForm(request.POST or None)
+    ngo = get_object_or_404(NGO, user=request.user)
+    if form.is_valid():
+        ngo_event = ngo.events_set.all()
+        for e in ngo_event:
+            if e.id == form.cleaned_data.get("name"):
+                context = {
+                    'ngo': ngo,
+                    'form': form
+                }
+                return render(request, 'ngo/events.html', context)
+        event = form.save(commit=False)
+        event.ngo = ngo
+        event.save()
+        return render(request, 'ngo/event_details.html', {'ngo': ngo})
+    context = {
+        'ngo': ngo,
+        'form': form,
+    }
+    return render(request, 'ngo/events.html', context)
 
 
 @login_required
@@ -191,3 +198,9 @@ def certificate_add(request):
     else:
         form = CertificateForm()
         return render(request, 'ngo/certificate_add.html', {'form': form})
+
+
+@login_required
+def chat(request):
+    return render(request, 'ngo/chat.html')
+
