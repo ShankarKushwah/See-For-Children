@@ -153,22 +153,23 @@ def certificate(request):
             'certificate': user_cert,
         })
 
-# @login_required
-# def notification(request):
-#     if not request.user.is_authenticated():
-#         return render(request, 'accounts/login.html')
-#     else:
-#         try:
-#             noti_ids = []
-#             for ngo in NGO.objects.filter(user=request.user):
-#                 for noti in ngo.notification_set.all():
-#                     noti_ids.append(noti.pk)
-#             user_cert = Certificate.objects.filter(pk__in=noti_ids)
-#         except NGO.DoesNotExist:
-#             user_cert = []
-#         return render(request, 'ngo/certificate.html', {
-#             'certificate': user_cert,
-#         })
+
+@login_required
+def notification(request):
+    if not request.user.is_authenticated():
+        return render(request, 'accounts/login.html')
+    else:
+        try:
+            noti_ids = []
+            for ngo in NGO.objects.filter(user=request.user):
+                for noti in ngo.children_set.all():
+                    noti_ids.append(noti.pk)
+            user_cert = Certificate.objects.filter(pk__in=noti_ids)
+        except NGO.DoesNotExist:
+            user_cert = []
+        return render(request, 'ngo/notification.html', {
+            'notification': user_cert,
+        })
 
 
 @login_required

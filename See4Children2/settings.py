@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'NGO',
     'accounts',
     'superadmin',
+    'messenger',
 ]
 
 MIDDLEWARE = [
