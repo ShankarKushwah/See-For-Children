@@ -1,7 +1,6 @@
 from django import forms
 from .models import Events, Children, Certificate
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserChangeForm
 
 
 class EventForm(forms.ModelForm):
@@ -25,4 +24,4 @@ class EditChildrenForm(UserChangeForm):
 class CertificateForm(forms.ModelForm):
     class Meta:
         model = Certificate
-        fields = ['ngo_name', 'donor_name', 'donation_amount', 'sponsored_child_code', 'sponsored_child_name', 'month', 'certificate_issue_date']
+        fields = ['donor_name', 'donation_amount', 'sponsored_child_code', 'sponsored_child_name', 'month', 'certificate_issue_date']

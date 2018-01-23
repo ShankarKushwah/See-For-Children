@@ -25,5 +25,12 @@ function toggle(source) {
 }
 </script>
     </section>
+    <section class="content">
+        {% for i in form %}
+        <ul>
+            <li><p>Admin sents you invoice<a href="/notification_detail/{{ i.id }}"> {{ i.donor_id }} </a></p></li>
+        </ul>
+        {% endfor %}
+    </section>
     </div>
 {% endblock %}

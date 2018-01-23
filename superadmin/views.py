@@ -63,7 +63,6 @@ def send_detail(request):
         return render(request, 'super_admin/send_detail.html', {'form': form})
 
 
-
 @staff_member_required
 def transaction_list(request):
     return render(request, 'super_admin/transaction_list.html')

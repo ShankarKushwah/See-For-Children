@@ -18,6 +18,7 @@ urlpatterns = [
     url(r'^donor_list/$', views.donor_list, name='donor_list'),
     url(r'^donor_detail/(?P<id>\d+)/$', views.donor_detail, name='donor_detail'),
     url(r'^notification_list/$', views.notification_list, name='notification_list'),
+    url(r'^notification_detail/(?P<id>\d+)/$', views.notification_detail, name='notification_detail'),
     url(r'^transaction/$', views.transaction, name='transaction'),
     url(r'^profile/$', views.profile, name='profile'),
     url(r'^edit_children/(?P<id>\d+)/$', views.children_edit, name='edit_children'),

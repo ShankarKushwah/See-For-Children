@@ -38,7 +38,7 @@ admin.site.register(Donor, DonorAdmin)
 
 
 class CertificateAdmin(admin.ModelAdmin):
-    list_display = ['ngo_name', 'donor_name']
+    list_display = ['ngo', 'donor_name']
 
 
 admin.site.register(Certificate, CertificateAdmin)

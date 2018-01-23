@@ -87,7 +87,7 @@ class Donor(models.Model):
 
 
 class Certificate(models.Model):
-    ngo_name = models.ForeignKey(NGO, on_delete=models.CASCADE)
+    ngo = models.ForeignKey(NGO, on_delete=models.CASCADE)
     donor_name = models.CharField(max_length=100)
     donation_amount = models.CharField(max_length=10)
     month = models.CharField(choices=(
