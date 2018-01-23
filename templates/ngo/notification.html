@@ -10,11 +10,10 @@
     <option value="saab">Delete</option>
   </select>
   <button> Submit</button><hr/>
-        <p><input type="checkbox" name="foo" value="1"> <a href=""> Rahul Sent you Message...!!!</a></p>
-        <p><input type="checkbox" name="foo" value="2"> <a href=""> Rahul Sent you Message...!!!</a></p>
-        <p><input type="checkbox" name="foo" value="3"> <a href=""> Rahul Sent you Message...!!!</a></p>
-        <p><input type="checkbox" name="foo" value="4"> <a href=""> Rahul Sent you Message...!!!</a></p>
 
+     {% for i in form %}
+            <p><input type="checkbox" name="foo" value="1"> Admin sents you invoice<a href="/notification_detail/{{ i.id }}"> {{ i.donor_id }}</a></p>
+     {% endfor %}
 
 <script language="JavaScript">
 function toggle(source) {
@@ -26,11 +25,7 @@ function toggle(source) {
 </script>
     </section>
     <section class="content">
-        {% for i in form %}
-        <ul>
-            <li><p>Admin sents you invoice<a href="/notification_detail/{{ i.id }}"> {{ i.donor_id }} </a></p></li>
-        </ul>
-        {% endfor %}
+
     </section>
     </div>
 {% endblock %}

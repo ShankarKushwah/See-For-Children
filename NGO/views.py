@@ -153,6 +153,23 @@ def certificate(request):
             'certificate': user_cert,
         })
 
+# @login_required
+# def notification(request):
+#     if not request.user.is_authenticated():
+#         return render(request, 'accounts/login.html')
+#     else:
+#         try:
+#             noti_ids = []
+#             for ngo in NGO.objects.filter(user=request.user):
+#                 for noti in ngo.notification_set.all():
+#                     noti_ids.append(noti.pk)
+#             user_cert = Certificate.objects.filter(pk__in=noti_ids)
+#         except NGO.DoesNotExist:
+#             user_cert = []
+#         return render(request, 'ngo/certificate.html', {
+#             'certificate': user_cert,
+#         })
+
 
 @login_required
 def certificate_detail(request, id):
@@ -182,6 +199,12 @@ def certificate_add(request):
         'form': form
     }
     return render(request, 'ngo/certificate_add.html', context)
+
+
+@login_required
+def certificate_sent(request, id=id):
+    form = get_object_or_404(Certificate, id=id)
+    return render(request, 'ngo/sent_certificate.html', {'form': form})
 
 
 @login_required
