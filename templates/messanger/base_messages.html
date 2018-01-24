@@ -3,8 +3,8 @@
 <div class="content-wrapper">
 <section class="content">
 {% block head %}
-  <link href="http://trybootcamp.vitorfs.com/static/css/messages.css" rel="stylesheet">
-  <script src="http://trybootcamp.vitorfs.com/static/js/messages.js"></script>
+  <link href="{% static 'css/messages.css' %}" rel="stylesheet">
+  <script src="{% static 'js/messages.js' %}"></script>
 {% endblock head %}
 
 {% block main %}
@@ -19,7 +19,7 @@
       {% block container %}
       {% endblock container %}
     </div>
-    <script src="http://trybootcamp.vitorfs.com/static/js/box-reziser.js"></script>
+    <script src="{% static 'js/box-reziser.js' %}"></script>
   </div>
     </section>
 </div>
