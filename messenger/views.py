@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render
 from messenger.models import Message
+from See4Children2.decorators import ajax_required
 
 
 @login_required
@@ -21,7 +22,7 @@ def inbox(request):
             if conversation in conversations:
                 if conversation['user'].username == active_conversations:
                     conversation['unread'] = 0
-    return render(request, 'messanger/inbox.html',{
+    return render(request, 'messanger/inbox.html', {
         'messages': messages,
         'conversations': conversations,
         'users_list': users_list,
@@ -30,18 +31,18 @@ def inbox(request):
 
 
 @login_required
-def messages(requset, username):
-    conversations = Message.get_conversations(user=requset.user)
+def messages(request, username):
+    conversations = Message.get_conversations(user=request.user)
     users_list = User.objects.filter(
-        is_active=True).exclude(username=requset.user).order_by('username')
+        is_active=True).exclude(username=request.user).order_by('username')
     active_conversation = username
-    messages = Message.objects.filter(user=requset.user, conversation__username=username)
+    messages = Message.objects.filter(user=request.user, conversation__username=username)
     messages.update(is_read=True)
     for conversation in conversations:
         if conversation['user'].username == username:
             conversation['unread'] = 0
 
-    return render(requset, 'messanger/inbox.html', {
+    return render(request, 'messanger/inbox.html', {
         'messages': messages,
         'conversations': conversations,
         'users_list': users_list,
@@ -50,11 +51,13 @@ def messages(requset, username):
 
 
 @login_required
+@ajax_required
 def delete(request):
     return HttpResponse()
 
 
 @login_required
+@ajax_required
 def send(request):
     if request.method == 'POST':
         from_user = request.user
@@ -66,7 +69,7 @@ def send(request):
 
         if from_user != to_user:
             msg = Message.send_message(from_user, to_user, message)
-            return render(request, 'messanger/includes/partial_messages.html', {'message': msg})
+            return render(request, 'messanger/includes/partial_conversations.html', {'message': msg})
 
         return HttpResponse()
 
@@ -75,6 +78,7 @@ def send(request):
 
 
 @login_required
+@ajax_required
 def check(request):
     count = Message.objects.filter(user=request.user, is_read=False).count()
     return HttpResponse(count)

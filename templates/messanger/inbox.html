@@ -1,5 +1,8 @@
 {% extends 'messanger/base_messages.html' %}
 {% load i18n %}
+<div class="content-wrapper">
+    <section class="content">
+
 
 {% block title %}{% trans 'Inbox' %}{% endblock %}
 
@@ -26,4 +29,6 @@
       <input class="form-control" type="text" name="message" placeholder="Write a message..." maxlength="1000" autocomplete="off">
     </form>
   </div>
+        </section>
+</div>
 {% endblock container %}

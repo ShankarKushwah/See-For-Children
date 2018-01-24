@@ -24,6 +24,9 @@ urlpatterns = [
     url(r'', include('NGO.urls')),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^superadmin/', include('superadmin.urls')),
+    url(r'^messenger/', include('messenger.urls')),
+    url(r'^messages/', include('messenger.urls')),
+    url(r'^i18n/', include('django.conf.urls.i18n', namespace='i18n')),
 
 ]
 
