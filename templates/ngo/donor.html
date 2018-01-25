@@ -7,20 +7,18 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Address</th>
-      <th scope="col">Adhar No.</th>
-      <th scope="col">Action</th>
+      <th scope="col">Index</th>
+      <th scope="col">Child Code</th>
+      <th scope="col">Donor Code</th>
+      <th scope="col">Activity</th>
     </tr>
   </thead>
   <tbody>
         {% for field in form %}
      <tr>
       <th scope="row">{{ field.id }}</th>
-      <td>{{ field.name }}</td>
-      <td>{{ field.city }}</td>
-      <td>{{ field.aadhar_no }}</td>
+      <td>{{ field.child_code }}</td>
+      <td>{{ field.donor_paid }}</td>
       <td><a href="/donor_detail/{{ field.id }}"><button class="btn btn-primary">View Details </button></a></td>
      </tr>
         {% endfor %}

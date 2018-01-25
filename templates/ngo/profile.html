@@ -3,19 +3,53 @@
     {% csrf_token %}
 <div class="content-wrapper">
 <section class="content">
-    <div class="container">
-    	<div class="row">
-		<div class="col-md-2">
-			<img src="https://www.legalforms.ng/wp-content/uploads/2016/03/NGO.jpg" height="120" width="120">
-		</div>
-		<div class="col-md-4">
-			<h3>Safe4Child</h3>
-			<h4>200+ children</h4>
-			<h4>3000 sqr.feet area</h4>
-			<h4>4 lac/year</h4>
-		</div><br>
+{% for c in form %}
+    <div class="content" style="margin-left: 30%">
+        <h1 style="margin-left:5%">NGO Profile</h1><hr/>
+        <div class="row">
+            <div class="col-md-3"><h3><b>Full Name:</b></h3></div>
+            <div class="col-md-6"><h3>{{ c.name }}</h3></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"><h3><b>Email Id:</b></h3></div>
+            <div class="col-md-6"><h3>{{ c.email }}</h3></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"><h3><b>State:</b></h3></div>
+            <div class="col-md-6"><h3>{{ c.state }}</h3></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"><h3><b>City:</b></h3></div>
+            <div class="col-md-6"><h3>{{ c.city }}</h3></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"><h3><b>Zip Code:</b></h3></div>
+            <div class="col-md-6"><h3>{{ c.zip_code }}</h3></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"><h3><b>Full Address:</b></h3></div>
+            <div class="col-md-6"><h3>Indore, Madhya Pradesh</h3></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"><h3><b>Director Name:</b></h3></div>
+            <div class="col-md-6"><h3>{{ c.director }}</h3></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"><h3><b>Total Staff:</b></h3></div>
+            <div class="col-md-6"><h3>{{ c.no_of_staff }}</h3></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"><h3><b>Establishment:</b></h3></div>
+            <div class="col-md-6"><h3>{{ c.established }}</h3></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"><h3><b>S/F Area:</b></h3></div>
+            <div class="col-md-6"><h3>{{ c.area }}</h3></div>
+        </div>
+        <hr/>
+        <button class="btn btn-lg btn-primary">Edit</button>
     </div>
-    </div>
+{% endfor %}
 </section>
 {#<section class="content">#}
 {#	<h2><u>Safe4Child upcoming events</u></h2>#}

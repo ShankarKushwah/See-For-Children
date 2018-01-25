@@ -253,7 +253,8 @@ def transaction(request):
 
 @login_required
 def profile(request):
-    return render(request, 'ngo/profile.html')
+    ngo = NGO.objects.filter(user=request.user)
+    return render(request, 'ngo/profile.html', {'form': ngo})
 
 
 @login_required
