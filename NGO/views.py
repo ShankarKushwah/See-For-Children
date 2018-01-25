@@ -47,7 +47,7 @@ def children_detail(request, id):
 
 @login_required
 def children_add(request):
-        form = ChildrenForm(request.POST or None)
+        form = ChildrenForm(request.POST, request.FILES)
         ngo = get_object_or_404(NGO, user=request.user)
         if form.is_valid():
             ngo_child = ngo.children_set.all()
