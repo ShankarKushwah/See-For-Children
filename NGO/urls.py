@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^profile/$', views.profile, name='profile'),
     url(r'^profile_edit/(?P<id>\d+)/$', views.profile_edit, name='profile_edit'),
     url(r'^edit_children/(?P<id>\d+)/$', views.children_edit, name='edit_children'),
+    url(r'^change_password/$', views.change_password, name='change_password'),
 
 ]

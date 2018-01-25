@@ -1,9 +1,10 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, update_session_auth_hash
 from django.contrib.auth import logout
 from django.db.models import Q
-
+from django.contrib.auth.forms import PasswordChangeForm
 from NGO.models import NGO, Events, Children, Staff, Donor, Certificate
 from superadmin.models import Invoice
 from .forms import EventForm, ChildrenForm, CertificateForm, NGOForm
@@ -277,3 +278,20 @@ def profile_edit(request, id):
 @login_required
 def chat(request):
     return render(request, 'ngo/chat.html')
+
+
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('/')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'ngo/change_password.html', {
+        'form': form
+    })
