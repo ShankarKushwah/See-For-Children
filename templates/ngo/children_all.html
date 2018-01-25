@@ -6,11 +6,13 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">ID</th>
+      <th scope="col">Index</th>
       <th scope="col">Name</th>
+      <th scope="col">Child Code</th>
       <th scope="col">Gender</th>
-      <th scope="col">Image</th>
-      <th scope="col">Action</th>
+      <th scope="col">Face Image</th>
+      <th scope="col">Activity</th>
+      <th scope="col">Report Mail</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +20,7 @@
      <tr>
       <th scope="row">{{ c.id }}</th>
       <td>{{ c.name }}</td>
+      <td>{{ c.code }}</td>
       <td>{{ c.gender.capitalize }}</td>
          {% if c.image %}
       <td><img src="{{ c.image.url }}" alt="Image" height="25px" width="25px"></td>
@@ -25,6 +28,7 @@
              <td><p>No image</p></td>
          {% endif %}
       <td><a href="/children_detail/{{ c.id }}"><button class="btn btn-primary">View Details</button></a> <button class="btn btn-danger"> Delete</button> </td>
+      <td></td>
      </tr>
         {% endfor %}
   </tbody>
