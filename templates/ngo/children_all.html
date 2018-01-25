@@ -18,7 +18,7 @@
   <tbody>
         {% for c in child %}
      <tr>
-      <th scope="row">{{ c.id }}</th>
+      <th scope="row">{{ forloop.counter }}</th>
       <td>{{ c.name }}</td>
       <td>{{ c.code }}</td>
       <td>{{ c.gender.capitalize }}</td>

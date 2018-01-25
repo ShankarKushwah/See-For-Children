@@ -29,7 +29,7 @@ def children(request):
             for ngo in NGO.objects.filter(user=request.user):
                 for child in ngo.children_set.all():
                     child_ids.append(child.pk)
-            user_child = Children.objects.filter(pk__in=child_ids)
+            user_child = Children.objects.filter(pk__in=child_ids).order_by('-name')
         except NGO.DoesNotExist:
             user_child = []
         return render(request, 'ngo/children_all.html', {
@@ -61,7 +61,7 @@ def children_add(request):
             child = form.save(commit=False)
             child.ngo = ngo
             child.save()
-            return render(request, 'ngo/children_detail.html', {'ngo': ngo})
+            return redirect('/children_list/')
         context = {
             'ngo': ngo,
             'form': form,

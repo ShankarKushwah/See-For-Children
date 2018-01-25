@@ -24,7 +24,7 @@ class NGO(models.Model):
 class Children(models.Model):
     ngo = models.ForeignKey(NGO, on_delete=models.CASCADE)
     code = models.UUIDField(max_length=3, default=uuid.uuid4, editable=False, unique=True)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, db_index=True)
     dob = models.DateField()
     place_found = models.CharField(max_length=100)
     gender = models.CharField(choices=(
