@@ -115,7 +115,7 @@ def event_details(request, id):
 
 @login_required
 def events_add(request):
-    form = EventForm(request.POST or None)
+    form = EventForm(request.POST,request.FILES)
     ngo = get_object_or_404(NGO, user=request.user)
     if form.is_valid():
         ngo_event = ngo.events_set.all()

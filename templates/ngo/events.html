@@ -6,7 +6,7 @@
     <section class="content">
         <h1>Add Events</h1>
    <div style="width:30%">
-  <form method="post">
+  <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="hidden" name="next" value="{{ next }}" />
   {% for error in form.non_field_errors %}

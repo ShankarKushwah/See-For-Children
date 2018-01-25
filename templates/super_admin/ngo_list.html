@@ -16,7 +16,7 @@
   <tbody>
         {% for field in form %}
      <tr>
-      <th scope="row">{{ field.id }}</th>
+      <th scope="row">{{ forloop.counter }}</th>
       <td>{{ field.name }}</td>
       <td>{{ field.no_of_children }}</td>
       <td>{{ field.city }}</td>
