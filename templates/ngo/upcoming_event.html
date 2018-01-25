@@ -7,17 +7,17 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">ID</th>
+      <th scope="col">Index</th>
       <th scope="col">Event Name</th>
       <th scope="col">Event Type</th>
       <th scope="col">Event Date</th>
-      <th scope="col">Action</th>
+      <th scope="col">Activity</th>
     </tr>
   </thead>
   <tbody>
         {% for event in event_list %}
      <tr>
-      <th scope="row">{{ event.id }}</th>
+      <th scope="row">{{ forloop.counter }}</th>
       <td>{{ event.name }}</td>
       <td>{{ event.type }}</td>
       <td>{{ event.date }}</td>

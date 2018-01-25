@@ -7,7 +7,7 @@
     <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">ID</th>
+      <th scope="col">Index</th>
       <th scope="col">Name</th>
       <th scope="col">Work</th>
       <th scope="col">Image</th>
@@ -19,7 +19,7 @@
   {% for s in staff %}
 
       <tr>
-      <th>{{ s.id }}</th>
+      <th>{{ forloop.counter }}</th>
       <td>{{ s.name }}</td>
       <td>{{ s.work }}</td>
       {% if s.image %}
