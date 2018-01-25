@@ -2,55 +2,31 @@
 {% block content %}
     {% csrf_token %}
 <div class="content-wrapper">
-<section class="content">
-{% for c in form %}
-    <div class="content" style="margin-left: 30%">
-        <h1><u>Beneficiary Profile</u></h1><hr/>
-        <div class="row">
-            <div class="col-md-3"><h3><b>Full Name:</b></h3></div>
-            <div class="col-md-6"><h3>{{ c.name }}</h3></div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"><h3><b>Email Id:</b></h3></div>
-            <div class="col-md-6"><h3>{{ c.email }}</h3></div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"><h3><b>State:</b></h3></div>
-            <div class="col-md-6"><h3>{{ c.state }}</h3></div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"><h3><b>City:</b></h3></div>
-            <div class="col-md-6"><h3>{{ c.city }}</h3></div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"><h3><b>Zip Code:</b></h3></div>
-            <div class="col-md-6"><h3>{{ c.zip_code }}</h3></div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"><h3><b>Full Address:</b></h3></div>
-            <div class="col-md-6"><h3>{{ c.city }}, {{ c.state }}</h3></div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"><h3><b>Director Name:</b></h3></div>
-            <div class="col-md-6"><h3>{{ c.director }}</h3></div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"><h3><b>Total Staff:</b></h3></div>
-            <div class="col-md-6"><h3>{{ c.no_of_staff }}</h3></div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"><h3><b>Establishment:</b></h3></div>
-            <div class="col-md-6"><h3>{{ c.established }}</h3></div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"><h3><b>S/F Area:</b></h3></div>
-            <div class="col-md-6"><h3>{{ c.area }}</h3></div>
-        </div>
-        <hr/>
-        <button class="btn btn-lg btn-primary">Edit</button>
+ <section class="content">
+ {% for b in form %}
+    <h2 style="margin-left: 30%">{{ b.name }}'s Detail</h2><hr/>
+    <div style="margin-left:5%">
+    {% if b.image %}
+        <img src="{% if b %}{{ b.image.url }}{% endif %}" height="120" width="120">
+    {% else %}
+    <img src="" alt="No image">
+    {% endif %}
+        <h3><b>Full Name: </b>{{ b.name }}</h3>
+        <p><b>Email ID: </b>{{ b.email }}</p>
+        <p><b>State: </b>{{ b.state }}</p>
+        <p><b>City: </b>{{ b.city }}</p>
+        <p><b>Zip Code: </b>{{ b.zip_code }}</p>
+        <p><b>Full Address: </b>{{ b.city }}, {{ b.state }}</p>
+        <p><b>Director Name: </b>{{ b.director }}</p>
+        <p><b>Total Children: </b>{{ b.no_of_children }}</p>
+        <p><b>Total Staff: </b>{{ b.no_of_staff }}</p>
+        <p><b>Establishment: </b>{{ b.established }}</p>
+        <p><b>S/F Area: </b>{{ b.area }}</p>
+
+        <a href="/profile_edit/{{ b.id }}"><button class="btn btn-primary">Edit</button></a></p>
     </div>
 {% endfor %}
-</section>
+    </section>
 {#<section class="content">#}
 {#	<h2><u>Safe4Child upcoming events</u></h2>#}
 {#	<table class="table table-striped">#}

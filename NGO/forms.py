@@ -1,5 +1,5 @@
 from django import forms
-from .models import Events, Children, Certificate
+from .models import Events, Children, Certificate, NGO
 from django.contrib.auth.forms import UserChangeForm
 
 
@@ -25,3 +25,9 @@ class CertificateForm(forms.ModelForm):
     class Meta:
         model = Certificate
         fields = ['donor_name', 'donation_amount', 'sponsored_child_code', 'sponsored_child_name', 'month', 'certificate_issue_date']
+
+
+class NGOForm(forms.ModelForm):
+    class Meta:
+        model = NGO
+        fields = ['name', 'email', 'state', 'city', 'zip_code', 'director', 'no_of_children', 'no_of_staff', 'established', 'area', 'image']

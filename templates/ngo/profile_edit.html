@@ -1,23 +1,37 @@
 {% extends 'ngo/base.html' %}
+{% load static %}
 {% block content %}
     <div class="content-wrapper">
     <section class="content">
-        <h1>Edit Profile</h1>
-        <div class="container">
-    <form method="post">
+    <h2>Edit Children</h2><hr/>
+        <form method="post">
         {% csrf_token %}
-        {{ form.username.label_tag }}<br>
-        {{ form.username }}<br><br>
-        {{ form.email.label_tag }}<br>
-        {{ form.email }}<br><br>
-        {{ form.first_name.label_tag }}<br>
-        {{ form.first_name }}<br><br>
-        {{ form.last_name.label_tag }}<br>
-        {{ form.last_name }}<br><br>
-        <button type="submit" class="btn btn-success">Edit</button>
+        {{ form.name.label_tag }}<br>
+            {{ form.name }}<br>
+            {{ form.email.label_tag }}<br>
+            {{ form.email }}<br>
+            {{ form.state.label_tag }}<br>
+            {{ form.state }}<br>
+            {{ form.city.label_tag }}<br>
+            {{ form.city }}<br>
+            {{ form.zip_code.label_tag }}<br>
+            {{ form.zip_code }}<br>
+            {{ form.director.label_tag }}<br>
+            {{ form.director }}<br>
+            {{ form.no_of_children.label_tag }}<br>
+            {{ form.no_of_children }}<br>
+            {{ form.no_of_staff.label_tag }}<br>
+            {{ form.no_of_staff }}<br>
+            {{ form.established.label_tag }}<br>
+            {{ form.established }}<br>
+            {{ form.area.label_tag }}<br>
+            {{ form.area }}<br>
+            {{ form.image.label_tag }}<br>
+            {{ form.image }}
+            <br><br>
+
+        <button type="submit" class="btn btn-success">Update</button>
     </form>
-    <br>
-</div>
     </section>
     </div>
 {% endblock %}

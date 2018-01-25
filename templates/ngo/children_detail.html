@@ -16,7 +16,7 @@
         <p><b>Education: </b>{{ child.education }} std.</p>
         <p><b>Description: </b>{{ child.description }}</p>
         <h3><b>Other details: </b></h3>
-        <p><b>Gender: </b>{{ child.gender }}</p>
+        <p><b>Gender: </b>{{ child.gender.capitalize }}</p>
         <p><b>School: </b>{{ child.school }}</p>
         <p><b>Hobby: </b>{{ child.hobby }}</p>
         <a href="/edit_children/{{ child.id }}"><button class="btn btn-primary">Edit</button> </a><a href="/delete_children/"> <button class="btn btn-danger">Delete</button> </a></p>
@@ -24,7 +24,7 @@
 
     </section>
     <section class="content">
-        <h2 style="margin-left:3%"><u>List of Previous Donor's</u></h2>
+{#        <h2 style="margin-left:3%"><u>List of Previous Donor's</u></h2>#}
     </section>
     </div>
 {% endblock %}

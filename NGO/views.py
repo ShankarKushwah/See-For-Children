@@ -6,7 +6,7 @@ from django.db.models import Q
 
 from NGO.models import NGO, Events, Children, Staff, Donor, Certificate
 from superadmin.models import Invoice
-from .forms import EventForm, ChildrenForm, CertificateForm
+from .forms import EventForm, ChildrenForm, CertificateForm, NGOForm
 
 
 @login_required
@@ -255,6 +255,23 @@ def transaction(request):
 def profile(request):
     ngo = NGO.objects.filter(user=request.user)
     return render(request, 'ngo/profile.html', {'form': ngo})
+
+
+@login_required
+def profile_edit(request, id):
+    instance = get_object_or_404(NGO, id=id)
+    form = NGOForm(request.POST or None, instance=instance)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        return redirect('/profile/')
+
+    context = {
+        "name": instance.name,
+        "ngo": instance,
+        "form": form,
+    }
+    return render(request, 'ngo/profile_edit.html', context)
 
 
 @login_required
