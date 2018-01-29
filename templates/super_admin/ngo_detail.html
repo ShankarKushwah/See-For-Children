@@ -50,13 +50,15 @@
     </tr>
   </thead>
   <tbody>
+  {% for c in child %}
      <tr>
-      <th scope="row">1</th>
-      <td>ACD</td>
-      <td><img src="#" alt="Image" height="25" width="25"></td>
-      <td>Akhshat</td>
-      <td>8 years</td>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ c.code }}</td>
+      <td><img src="{{ c.image.url }}" alt="Image" height="25" width="25"></td>
+      <td>{{ c.name }}</td>
+      <td>{{ c.dob }}</td>
      </tr>
+  {% endfor %}
   </tbody>
 </table>
     <button class="btn btn-primary">Load More</button>

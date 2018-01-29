@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.contrib.admin.views.decorators import staff_member_required
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
-from NGO.models import NGO, Events, Donor
+from NGO.models import NGO, Events, Donor, Children
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from superadmin.forms import InvoiceForm
@@ -47,9 +47,10 @@ def ngo_list(request):
 def ngo_detail(request, id):
     form = get_object_or_404(NGO, id=id)
     events = Events.objects.filter()
+    child = Children.objects.filter()
     return render(request,
                   'super_admin/ngo_detail.html',
-                  {'form': form, 'events': events})
+                  {'form': form, 'events': events, 'child': child})
 
 
 @staff_member_required
