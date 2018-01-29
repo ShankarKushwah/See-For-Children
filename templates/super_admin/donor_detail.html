@@ -12,20 +12,20 @@
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="widget-user-header bg-yellow">
               <div class="widget-user-image">
-                <img class="img-circle" src="{% static 'dist/img/user7-128x128.jpg' %}" alt="User Avatar">
+                <img class="img-circle" src="{{ form.image.url }}" alt="User Avatar">
               </div>
               <!-- /.widget-user-image -->
-              <h3 class="widget-user-username">Pooja</h3>
+              <h3 class="widget-user-username">{{ form.name }}</h3>
                 <br>
             </div>
             <div class="box-footer no-padding">
               <ul class="nav nav-stacked" style="margin-left: 10px;">
-                <li><b>Child Code: </b>MTV</li>
-                <li><b>City: </b>Indore</li>
-                <li><b>Donar Paid: </b>5000/-</li>
-                <li><b>Last Paid: </b>18-January-2018</li>
-                <li><b>Total Paid: </b>23000/-</li>
-                <li><b>Duration: </b>jan to august</li>
+                <li><b>Child Code: </b>{{ form.child_code }}</li>
+                <li><b>City: </b>{{ form.city }}</li>
+                <li><b>Donar Paid: </b>{{ form.donor_paid }}/-</li>
+                <li><b>Last Paid: </b>{{ form.last_paid }}</li>
+                <li><b>Total Paid: </b>{{ form.last_paid }}/-</li>
+                <li><b>Duration: </b>{{ form.duration.capitalize }}</li>
                 </ul><br>
                 <button style="margin-left: 50%" class="btn btn-success">Chat active</button><br><br>
             </div>
@@ -33,8 +33,6 @@
           <!-- /.widget-user -->
         </div>
      </div>
-
-
     </section>
     </div>
 {% endblock %}

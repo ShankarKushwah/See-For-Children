@@ -32,8 +32,9 @@ def donor_list(request):
 
 
 @staff_member_required
-def donor_detail(request):
-    return render(request, 'super_admin/donor_detail.html')
+def donor_detail(request, id):
+    form = get_object_or_404(Donor, id=id)
+    return render(request, 'super_admin/donor_detail.html', {'form': form})
 
 
 @staff_member_required

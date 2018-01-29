@@ -115,7 +115,7 @@ def event_details(request, id):
 
 @login_required
 def events_add(request):
-    form = EventForm(request.POST,request.FILES)
+    form = EventForm(request.POST, request.FILES)
     ngo = get_object_or_404(NGO, user=request.user)
     if form.is_valid():
         ngo_event = ngo.events_set.all()
@@ -129,7 +129,7 @@ def events_add(request):
         event = form.save(commit=False)
         event.ngo = ngo
         event.save()
-        return render(request, 'ngo/event_details.html', {'ngo': ngo})
+        return redirect('/event_list/')
     context = {
         'ngo': ngo,
         'form': form,

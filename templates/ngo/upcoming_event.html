@@ -21,7 +21,7 @@
       <td>{{ event.name }}</td>
       <td>{{ event.type }}</td>
       <td>{{ event.date }}</td>
-         <td><button class="btn btn-danger">Delete</button> <a href="/event_details/{{ event.id }}"><button class="btn btn-primary"> View Details</button></a></td>
+         <td><a href="/event_details/{{ event.id }}"><button class="btn btn-primary"> View Details  </button></a> <button class="btn btn-danger">Delete</button></td>
      </tr>
         {% endfor %}
   </tbody>
