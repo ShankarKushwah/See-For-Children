@@ -46,8 +46,8 @@ def ngo_list(request):
 @staff_member_required
 def ngo_detail(request, id):
     form = get_object_or_404(NGO, id=id)
-    events = Events.objects.filter()
-    child = Children.objects.filter()
+    events = Events.objects.filter(ngo=form)
+    child = Children.objects.filter(ngo=form)
     return render(request,
                   'super_admin/ngo_detail.html',
                   {'form': form, 'events': events, 'child': child})

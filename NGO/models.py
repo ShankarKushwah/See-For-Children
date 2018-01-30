@@ -115,3 +115,7 @@ class Certificate(models.Model):
     def __str__(self):
         return self.donor_name
 
+
+class Photos(models.Model):
+    photo = models.ImageField(upload_to='photo_gallery/')
+    child = models.ForeignKey(Children, on_delete=models.CASCADE)

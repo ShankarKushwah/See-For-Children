@@ -1,37 +1,62 @@
 {% extends 'super_admin/base.html' %}
+{% load static %}
 {% block content %}
-    {% load staticfiles %}
     <div class="content-wrapper">
     <section class="content">
     <hr/>
+<div style="margin-left: 5%">
+  <div class="col-md-2">
+        <img src="{{ form.image.url}}" width="150" height="150">
+  </div>
+  <div class="col-md-8">
+        <h4><b>Donor Name: </b>{{form.name}}</h4>
+        <h4><b>Child Code: </b>{{form.child_code}}</h4>
+        <h4><b>Sent by: </b>See4Children</h4>
+        <h4><b>Donor Paid: </b>{{form.donor_paid}}</h4>
+        <h4><b>Last Paid: </b>{{form.last_paid}}</h4><br>
+  </div>
+<hr/>
+<table class="table" border="0">
+  <thead><br>
+    <tr>
+      <th scope="col">Index</th>
+      <th scope="col">Sent by</th>
+      <th scope="col">Reference</th>
+      <th scope="col">Month</th>
+      <th scope="col">Paid</th>
+      <th scope="col">Report</th>
+    </tr>
+  </thead>
+  <tbody>
 
-     <div class="row" style="margin-left: 35px;">
-        <div class="col-md-6">
-          <!-- Widget: user widget style 1 -->
-          <div class="box box-widget widget-user-2">
-            <!-- Add the bg color to the header using any of the bg-* classes -->
-            <div class="widget-user-header bg-yellow">
-              <div class="widget-user-image">
-                <img class="img-circle" src="{{ form.image.url }}" alt="User Avatar">
-              </div>
-              <!-- /.widget-user-image -->
-              <h3 class="widget-user-username">{{ form.name }}</h3>
-                <br>
-            </div>
-            <div class="box-footer">
-              <ul class="nav nav-stacked" style="margin-left: 10px;">
-                <li><b>Child Code: </b>{{ form.child_code }}</li>
-                <li><b>City: </b>{{ form.city }}</li>
-                <li><b>Donar Paid: </b>{{ form.donor_paid }}/-</li>
-                <li><b>Last Paid: </b>{{ form.last_paid }}</li>
-                <li><b>Total Paid: </b>{{ form.last_paid }}/-</li>
-                <li><b>Duration: </b>{{ form.duration.capitalize }}</li>
-                </ul><br>
-            </div>
-          </div>
-          <!-- /.widget-user -->
-        </div>
-     </div>
+     <tr>
+      <th scope="row">01</th>
+      <td>See4Children</td>
+      <td>Abhishek</td>
+      <td>March</td>
+      <td>5000/-</td>
+      <td><button class="btn btn-primary">Create</button></td>
+     </tr>
+     <tr>
+      <th scope="row">02</th>
+      <td>See4Children</td>
+      <td>Abhishek</td>
+      <td>May</td>
+      <td>100/-</td>
+      <td><button class="btn btn-primary">Sent</button></td>
+     </tr>
+     <tr>
+      <th scope="row">03</th>
+      <td>See4Children</td>
+      <td>Abhishek</td>
+      <td>July</td>
+      <td>1000/-</td>
+      <td><button class="btn btn-primary">Sent</button></td>
+     </tr>
+  </tbody>
+</table>
+
+</div>
     </section>
     </div>
 {% endblock %}

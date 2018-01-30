@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login, update_session_auth_hash
 from django.contrib.auth import logout
 from django.db.models import Q
 from django.contrib.auth.forms import PasswordChangeForm
-from NGO.models import NGO, Events, Children, Staff, Donor, Certificate
+from NGO.models import NGO, Events, Children, Staff, Donor, Certificate, Photos
 from superadmin.models import Invoice
 from .forms import EventForm, ChildrenForm, CertificateForm, NGOForm, EditChildrenForm
 
@@ -42,9 +42,11 @@ def children(request):
 @login_required
 def children_detail(request, id):
     child = get_object_or_404(Children, id=id)
+    ph = Photos.objects.filter()
+    don = Donor.objects.all()
     return render(request,
                   'ngo/children_detail.html',
-                  {'child': child})
+                  {'child': child, 'photos': ph, 'donor': don})
 
 
 @login_required
@@ -115,7 +117,7 @@ def event_details(request, id):
 
 @login_required
 def events_add(request):
-    form = EventForm(request.POST, request.FILES)
+    form = EventForm(request.POST or None, request.FILES or None)
     ngo = get_object_or_404(NGO, user=request.user)
     if form.is_valid():
         ngo_event = ngo.events_set.all()
@@ -295,3 +297,8 @@ def change_password(request):
     return render(request, 'ngo/change_password.html', {
         'form': form
     })
+
+
+def photos(request):
+    images = Photos.objects.all()
+    return render(request, 'ngo/children_detail.html', {'photos': images})

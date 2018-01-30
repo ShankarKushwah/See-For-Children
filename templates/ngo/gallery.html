@@ -1,0 +1,14 @@
+{% extends 'ngo/base.html' %}
+{% block content %}
+    <div class="content-wrapper">
+    <section class="content">
+
+{% for p in photos %}
+    <img src="{{ p.photo.url }}"/>
+        {% endfor %}
+
+
+
+    </section>
+    </div>
+{% endblock %}

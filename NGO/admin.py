@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import NGO, Events, Children, Staff, Donor, Certificate
+from .models import NGO, Events, Children, Staff, Donor, Certificate, Photos
 
 
 class NGOAdmin(admin.ModelAdmin):
@@ -17,7 +17,7 @@ admin.site.register(Events, EventAdmin)
 
 
 class ChildrenAdmin(admin.ModelAdmin):
-    list_display = ['name', 'code', 'ngo', 'dob', 'gender', 'adoption_date']
+    list_display = ['id', 'name', 'code', 'ngo', 'dob', 'gender', 'adoption_date']
 
 
 admin.site.register(Children, ChildrenAdmin)
@@ -42,3 +42,4 @@ class CertificateAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Certificate, CertificateAdmin)
+admin.site.register(Photos)
