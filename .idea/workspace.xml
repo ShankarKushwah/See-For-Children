@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72ea6ed6-155e-41b6-9ed3-9528d224e53c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/NGO/migrations/0016_photos.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/NGO/migrations/0017_auto_20180130_1549.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/ngo/gallery.html" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/NGO/admin.py" afterPath="$PROJECT_DIR$/NGO/admin.py" />
-      <change beforePath="$PROJECT_DIR$/NGO/forms.py" afterPath="$PROJECT_DIR$/NGO/forms.py" />
-      <change beforePath="$PROJECT_DIR$/NGO/models.py" afterPath="$PROJECT_DIR$/NGO/models.py" />
-      <change beforePath="$PROJECT_DIR$/NGO/views.py" afterPath="$PROJECT_DIR$/NGO/views.py" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change beforePath="$PROJECT_DIR$/superadmin/views.py" afterPath="$PROJECT_DIR$/superadmin/views.py" />
       <change beforePath="$PROJECT_DIR$/templates/ngo/children_detail.html" afterPath="$PROJECT_DIR$/templates/ngo/children_detail.html" />
-      <change beforePath="$PROJECT_DIR$/templates/ngo/event_details.html" afterPath="$PROJECT_DIR$/templates/ngo/event_details.html" />
-      <change beforePath="$PROJECT_DIR$/templates/ngo/events.html" afterPath="$PROJECT_DIR$/templates/ngo/events.html" />
-      <change beforePath="$PROJECT_DIR$/templates/super_admin/donor_detail.html" afterPath="$PROJECT_DIR$/templates/super_admin/donor_detail.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,21 +42,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="children_detail.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="children_detail.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/ngo/children_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="116">
+              <caret line="103" column="30" lean-forward="false" selection-start-line="103" selection-start-column="30" selection-end-line="103" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NGO/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
-              <caret line="138" column="54" lean-forward="true" selection-start-line="138" selection-start-column="54" selection-end-line="138" selection-end-column="54" />
+              <caret line="138" column="54" lean-forward="false" selection-start-line="138" selection-start-column="54" selection-end-line="138" selection-end-column="54" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -179,13 +166,13 @@
         <option value="$PROJECT_DIR$/NGO/admin.py" />
         <option value="$PROJECT_DIR$/templates/ngo/gallery.html" />
         <option value="$PROJECT_DIR$/NGO/urls.py" />
-        <option value="$PROJECT_DIR$/templates/ngo/children_detail.html" />
         <option value="$PROJECT_DIR$/templates/super_admin/donor_detail.html" />
         <option value="$PROJECT_DIR$/templates/super_admin/send_detail.html" />
         <option value="$PROJECT_DIR$/superadmin/views.py" />
         <option value="$PROJECT_DIR$/templates/ngo/events.html" />
         <option value="$PROJECT_DIR$/NGO/views.py" />
         <option value="$PROJECT_DIR$/templates/ngo/event_details.html" />
+        <option value="$PROJECT_DIR$/templates/ngo/children_detail.html" />
       </list>
     </option>
   </component>
@@ -794,21 +781,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ngo/children_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NGO/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
-          <caret line="138" column="54" lean-forward="true" selection-start-line="138" selection-start-column="54" selection-end-line="138" selection-end-column="54" />
+          <caret line="138" column="54" lean-forward="false" selection-start-line="138" selection-start-column="54" selection-end-line="138" selection-end-column="54" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ngo/children_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="103" column="30" lean-forward="false" selection-start-line="103" selection-start-column="30" selection-end-line="103" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
