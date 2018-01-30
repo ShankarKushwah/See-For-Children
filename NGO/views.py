@@ -8,7 +8,7 @@ from django.db.models import Q
 from django.contrib.auth.forms import PasswordChangeForm
 from NGO.models import NGO, Events, Children, Staff, Donor, Certificate, Photos
 from superadmin.models import Invoice
-from .forms import EventForm, ChildrenForm, CertificateForm, NGOForm, EditChildrenForm
+from .forms import EventForm, ChildrenForm, CertificateForm, NGOForm
 
 
 @login_required

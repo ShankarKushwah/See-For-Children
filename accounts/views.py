@@ -6,7 +6,7 @@ from accounts.forms import NGOForm, SignUpForm
 
 def register(request):
     if request.method == 'POST':
-        form = NGOForm(request.POST)
+        form = NGOForm(request.POST or None, request.FILES or None)
         if form.is_valid():
             form.save()
             return render('saved')
