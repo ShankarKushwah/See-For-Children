@@ -39,6 +39,7 @@ class Children(models.Model):
     hobby = models.CharField(max_length=20, blank=True)
     adoption_date = models.DateField(blank=True)
     description = models.TextField(blank=True)
+    video_link = models.URLField(blank=True)
 
     def __str__(self):
         return self.name
