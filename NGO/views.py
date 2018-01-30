@@ -8,7 +8,7 @@ from django.db.models import Q
 from django.contrib.auth.forms import PasswordChangeForm
 from NGO.models import NGO, Events, Children, Staff, Donor, Certificate
 from superadmin.models import Invoice
-from .forms import EventForm, ChildrenForm, CertificateForm, NGOForm
+from .forms import EventForm, ChildrenForm, CertificateForm, NGOForm, EditChildrenForm
 
 
 @login_required
@@ -74,14 +74,13 @@ def children_add(request):
 @login_required
 def children_edit(request, id):
     instance = get_object_or_404(Children, id=id)
-    form = ChildrenForm(request.POST or None, instance=instance)
+    form = ChildrenForm(request.POST or None, request.FILES or None, instance=instance)
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-        return redirect('/children_list')
+        return redirect('/children_detail/%d/' % int(id))
 
     context = {
-        "name": instance.name,
         "instance": instance,
         "form": form,
     }
@@ -262,7 +261,7 @@ def profile(request):
 @login_required
 def profile_edit(request, id):
     instance = get_object_or_404(NGO, id=id)
-    form = NGOForm(request.POST or None, instance=instance)
+    form = NGOForm(request.POST or None, request.FILES or None, instance=instance)
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()

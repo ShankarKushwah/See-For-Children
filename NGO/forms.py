@@ -16,7 +16,7 @@ class ChildrenForm(forms.ModelForm):
                   'adoption_date', 'video_link']
 
 
-class EditChildrenForm(UserChangeForm):
+class EditChildrenForm(forms.ModelForm):
     class Meta:
         model = Children
         fields = ['name', 'dob', 'gender', 'place_found', 'image', 'description', 'education', 'school', 'hobby',

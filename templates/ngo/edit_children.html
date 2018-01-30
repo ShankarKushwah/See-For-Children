@@ -4,7 +4,7 @@
     <div class="content-wrapper">
     <section class="content">
     <h2>Edit Children</h2><hr/>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {% for fields in form %}
         {{ fields.label_tag }}<br>
