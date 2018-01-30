@@ -4,13 +4,22 @@
     <section class="content">
         <h1 style="margin-left: 35%">Send Invoice</h1>
         <div style="margin-left: 10%">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-                {% for fields in form %}
-                    {{ fields.label_tag }}<br>
-                    {{ fields }}<br>
-                {% endfor %}
-            <br>
+                {{ form.select_ngo.label_tag }}<br>
+                {{ form.select_ngo }}<br>
+                {{ form.child_name.label_tag }}<br>
+                {{ form.child_name }}<br>
+                {{ form.donor_id.label_tag }}<br>
+                {{ form.donor_id }}<br>
+                {{ form.donation_month.label_tag }}<br>
+                {{ form.donation_month }}<br>
+                {{ form.invoice.label_tag }}<br>
+                {{ form.invoice }}<br>
+                {{ form.date.label_tag }}<br>
+                {{ form.date }}<br>
+                {{ form.paid.label_tag }}<br>
+                {{ form.paid }}<br><br>
             <button type="submit" class="btn btn-primary">Send</button>
             </form>
         </div>

@@ -56,7 +56,7 @@ def ngo_detail(request, id):
 @staff_member_required
 def send_detail(request):
     if request.method == 'POST':
-        form = InvoiceForm(request.POST)
+        form = InvoiceForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return HttpResponse("send...")
