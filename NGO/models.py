@@ -52,7 +52,7 @@ class Events(models.Model):
     date = models.DateField()
     time = models.TimeField()
     place = models.CharField(max_length=100)
-    description = models.CharField(max_length=100)
+    description = models.CharField(max_length=1000)
     image = models.ImageField(upload_to='events/', blank=True)
     organizer = models.CharField(max_length=30)
 

@@ -1,28 +1,38 @@
 {% extends 'ngo/base.html' %}
-{% load static %}
+{% load staticfiles %}
 {% block content %}
     <div class="content-wrapper">
-    <section class="content">
 
-        <h2 style="margin-left: 30%">{{ form.name }} Details</h2><hr/>
-    <div style="margin-left:5%">
-    <div class="container">
-    <div class="row">
-    <div class="col-md-2">
+    <div class="container1">
     {% if form.image %}
-        <img src="{% if form %}{{ form.image.url }}{% endif %}" height="150" width="150">
+        <img src="{% if form %}{{ form.image.url }}{% endif %}" height="300px" width="100%;">
     {% else %}
     <img src="" alt="No image">
     {% endif %}
+    <div class="bottom-left"><h1><b>{{ form.name.upper }} Event</b></h1></div>
     </div>
-    <div class="col-md-3">
-        <h3><b>Event Name: </b>{{ form.name }}</h3>
+{% block static %}
+    <style>
+.container1 {
+    position: relative;
+    text-align: center;
+    color: white;
+}
 
-        <p><b>Date: </b>{{ form.date }}</p>
-        <p><b>Time: </b>{{ form.time }} std.</p>
-        <p><b>Place: </b>{{ form.place }} std.</p>
-    </div>
-
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 20px;
+}
+    </style>
+{% endblock %}<br>
+    <section class="content">
+        <div style="margin-left: 3%">
+            <h4><i><b>Event Type: </b></i>{{ form.type }}</h4>
+            <h4><i><b>Date: </b></i>{{ form.date }}</h4>
+            <h4><i><b>Venue: </b></i>{{ form.place }}</h4>
+            <h4><i><b>Description: </b></i>{{ form.description|safe }}</h4>
+        </div>
     </section>
     </div>
 {% endblock %}
