@@ -197,7 +197,7 @@ def certificate_add(request):
         certificate = form.save(commit=False)
         certificate.ngo = ngo
         certificate.save()
-        return render(request, 'ngo/certificate.html', {'ngo': ngo})
+        return redirect('/certificate/')
     context = {
         'ngo': ngo,
         'form': form

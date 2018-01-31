@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72ea6ed6-155e-41b6-9ed3-9528d224e53c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/NGO/forms.py" afterPath="$PROJECT_DIR$/NGO/forms.py" />
-      <change beforePath="$PROJECT_DIR$/accounts/forms.py" afterPath="$PROJECT_DIR$/accounts/forms.py" />
+      <change beforePath="$PROJECT_DIR$/NGO/views.py" afterPath="$PROJECT_DIR$/NGO/views.py" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,16 +21,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NGO/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="44" column="31" lean-forward="false" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+            <state relative-caret-position="378">
+              <caret line="204" column="4" lean-forward="false" selection-start-line="204" selection-start-column="4" selection-end-line="204" selection-end-column="4" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <element signature="e#691#965#0" expanded="false" />
                 <element signature="e#1011#1564#0" expanded="false" />
-                <element signature="e#1870#2632#0" expanded="false" />
+                <element signature="e#1621#1816#0" expanded="false" />
                 <element signature="e#2687#3106#0" expanded="false" />
                 <element signature="e#3154#3700#0" expanded="false" />
                 <element signature="e#3755#3899#0" expanded="false" />
@@ -38,27 +38,26 @@
                 <element signature="e#4678#5216#0" expanded="false" />
                 <element signature="e#5266#5803#0" expanded="false" />
                 <element signature="e#5863#5995#0" expanded="false" />
-                <element signature="e#6048#6786#0" expanded="false" />
-                <element signature="e#6847#6963#0" expanded="false" />
-                <element signature="e#7006#7102#0" expanded="false" />
-                <element signature="e#7349#7436#0" expanded="false" />
-                <element signature="e#7490#7596#0" expanded="false" />
-                <element signature="e#7651#7747#0" expanded="false" />
-                <element signature="e#7808#7923#0" expanded="false" />
-                <element signature="e#8063#8168#0" expanded="false" />
-                <element signature="e#8222#8635#0" expanded="false" />
-                <element signature="e#8753#9310#0" expanded="false" />
-                <element signature="e#9338#9442#0" expanded="false" />
+                <element signature="e#6819#6935#0" expanded="false" />
+                <element signature="e#6978#7074#0" expanded="false" />
+                <element signature="e#7321#7408#0" expanded="false" />
+                <element signature="e#7462#7568#0" expanded="false" />
+                <element signature="e#7623#7719#0" expanded="false" />
+                <element signature="e#7780#7895#0" expanded="false" />
+                <element signature="e#8035#8140#0" expanded="false" />
+                <element signature="e#8194#8607#0" expanded="false" />
+                <element signature="e#8725#9282#0" expanded="false" />
+                <element signature="e#9310#9414#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NGO/forms.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="436">
-              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -222,12 +221,12 @@
         <option value="$PROJECT_DIR$/NGO/urls.py" />
         <option value="$PROJECT_DIR$/NGO/admin.py" />
         <option value="$PROJECT_DIR$/templates/ngo/gallery.html" />
-        <option value="$PROJECT_DIR$/NGO/views.py" />
         <option value="$PROJECT_DIR$/templates/ngo/children_all.html" />
         <option value="$PROJECT_DIR$/templates/ngo/children_detail.html" />
         <option value="$PROJECT_DIR$/NGO/models.py" />
         <option value="$PROJECT_DIR$/accounts/forms.py" />
         <option value="$PROJECT_DIR$/NGO/forms.py" />
+        <option value="$PROJECT_DIR$/NGO/views.py" />
       </list>
     </option>
   </component>
@@ -442,7 +441,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -755,37 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NGO/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="44" column="31" lean-forward="false" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#691#965#0" expanded="false" />
-            <element signature="e#1011#1564#0" expanded="false" />
-            <element signature="e#1870#2632#0" expanded="false" />
-            <element signature="e#2687#3106#0" expanded="false" />
-            <element signature="e#3154#3700#0" expanded="false" />
-            <element signature="e#3755#3899#0" expanded="false" />
-            <element signature="e#3947#4629#0" expanded="false" />
-            <element signature="e#4678#5216#0" expanded="false" />
-            <element signature="e#5266#5803#0" expanded="false" />
-            <element signature="e#5863#5995#0" expanded="false" />
-            <element signature="e#6048#6786#0" expanded="false" />
-            <element signature="e#6847#6963#0" expanded="false" />
-            <element signature="e#7006#7102#0" expanded="false" />
-            <element signature="e#7349#7436#0" expanded="false" />
-            <element signature="e#7490#7596#0" expanded="false" />
-            <element signature="e#7651#7747#0" expanded="false" />
-            <element signature="e#7808#7923#0" expanded="false" />
-            <element signature="e#8063#8168#0" expanded="false" />
-            <element signature="e#8222#8635#0" expanded="false" />
-            <element signature="e#8753#9310#0" expanded="false" />
-            <element signature="e#9338#9442#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ngo/children_all.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -823,8 +791,38 @@
     <entry file="file://$PROJECT_DIR$/NGO/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NGO/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="204" column="4" lean-forward="false" selection-start-line="204" selection-start-column="4" selection-end-line="204" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#691#965#0" expanded="false" />
+            <element signature="e#1011#1564#0" expanded="false" />
+            <element signature="e#1621#1816#0" expanded="false" />
+            <element signature="e#2687#3106#0" expanded="false" />
+            <element signature="e#3154#3700#0" expanded="false" />
+            <element signature="e#3755#3899#0" expanded="false" />
+            <element signature="e#3947#4629#0" expanded="false" />
+            <element signature="e#4678#5216#0" expanded="false" />
+            <element signature="e#5266#5803#0" expanded="false" />
+            <element signature="e#5863#5995#0" expanded="false" />
+            <element signature="e#6819#6935#0" expanded="false" />
+            <element signature="e#6978#7074#0" expanded="false" />
+            <element signature="e#7321#7408#0" expanded="false" />
+            <element signature="e#7462#7568#0" expanded="false" />
+            <element signature="e#7623#7719#0" expanded="false" />
+            <element signature="e#7780#7895#0" expanded="false" />
+            <element signature="e#8035#8140#0" expanded="false" />
+            <element signature="e#8194#8607#0" expanded="false" />
+            <element signature="e#8725#9282#0" expanded="false" />
+            <element signature="e#9310#9414#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
