@@ -10,7 +10,7 @@ class DateInput(forms.DateInput):
 class EventForm(forms.ModelForm):
     class Meta:
         model = Events
-        fields = ['name', 'date', 'place', 'description', 'organizer', 'time', 'type', 'image']
+        fields = ['name', 'date', 'place', 'description', 'organizer', 'type', 'image']
         widgets = {'date': DateInput()}
 
 

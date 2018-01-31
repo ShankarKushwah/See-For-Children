@@ -50,9 +50,8 @@ class Events(models.Model):
     name = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
     date = models.DateField()
-    time = models.TimeField()
     place = models.CharField(max_length=100)
-    description = models.CharField(max_length=1000)
+    description = models.TextField()
     image = models.ImageField(upload_to='events/', blank=True)
     organizer = models.CharField(max_length=30)
 
