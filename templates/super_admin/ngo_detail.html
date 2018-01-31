@@ -2,20 +2,57 @@
 {% block content %}
     {% load staticfiles %}
     <div class="content-wrapper" xmlns="http://www.w3.org/1999/html">
-    <div class="content">
-        <h2 style="margin-left: 34%">{{ form.name }} Details</h2><hr/>
-        <div class="content">
-            <div class="row">
-                <div class="col-md-3"><img src="{{ form.image.url }}" height="200" width="200"></div>
-                <div class="col-md-8"><h1>{{ form.name }}</h1></div>
-                <div class="col-md-8"><h3>{{ form.no_of_children }}+ children</h3></div>
-                <div class="col-md-8"><h4>{{ form.area }} area</h4></div>
-                <div class="col-md-8"><h4>4 lac/year</h4></div>
-            </div><hr/>
+
+
+<div class="container1">
+    {% if form.image %}
+        <img src="{% if form %}{{ form.image.url }}{% endif %}" height="300px" width="100%;">
+    {% else %}
+    <img src="" alt="No image">
+    {% endif %}
+    <div class="bottom-left"><h1><b>{{ form.name.upper }} </b></h1></div>
+</div>
+{% block static %}
+    <style>
+.container1 {
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 20px;
+}
+    </style>
+{% endblock %}<br>
+
+    <section class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+        <h3><b>Beneficiary Name: </b>{{ form.name }}</h3>
+        <h4><b>Email ID: </b>{{ form.email }}</h4>
+        <h4><b>State: </b>{{ form.state }}</h4>
+        <h4><b>City: </b>{{ form.city }}</h4>
+        <h4><b>Zip Code: </b>{{ form.zip_code }}</h4>
+        <h4><b>Full Address: </b>{{ form.city }}, {{ form.state }}</h4>
+            </div>
+            <div class="col-md-6">
+        <h3><b>Director Name: </b>{{ form.director }}</h3>
+        <h4><b>Total Children: </b>{{ form.no_of_children }}</h4>
+        <h4><b>Total Staff: </b>{{ form.no_of_staff }}</h4>
+        <h4><b>Establishment: </b>{{ form.established }}</h4>
+        <h4><b>S/F Area: </b>{{ form.area }}</h4>
+            </div>
         </div>
-<div>
-            <h4><u><b>Shine upcoming event</b></u></h4>
-            <table class="table table-striped">
+    </div>
+    </section>
+
+<div class="content">
+    <h4><u><b>{{ form.name }}'s upcoming event</b></u></h4>
+    <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">Index</th>
@@ -35,10 +72,10 @@
 {% endfor %}
   </tbody>
 </table>
-            <button class="btn btn-primary">Load More</button>
+      <button class="btn btn-primary">Load More</button>
 </div><hr/>
-<div>
-            <h4><u><b>Shine Children list</b></u></h4>
+<div class="content">
+            <h4><u><b>{{ form.name }}'s Children list</b></u></h4>
             <table class="table table-striped">
   <thead>
     <tr>
@@ -63,7 +100,6 @@
 </table>
     <button class="btn btn-primary">Load More</button>
 </div>
-
     </div>
 </section>
     </div>
