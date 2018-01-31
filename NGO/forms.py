@@ -27,6 +27,7 @@ class CertificateForm(forms.ModelForm):
         model = Certificate
         fields = ['donor_name', 'donation_amount', 'sponsored_child_code', 'sponsored_child_name', 'month',
                   'certificate_issue_date']
+        widgets = {'certificate_issue_date': DateInput(), }
 
 
 class NGOForm(forms.ModelForm):
@@ -34,6 +35,7 @@ class NGOForm(forms.ModelForm):
         model = NGO
         fields = ['name', 'email', 'state', 'city', 'zip_code', 'director', 'no_of_children', 'no_of_staff',
                   'established', 'area', 'image']
+        widgets = {'established': DateInput(), }
 
 
 class PhotoForm(forms.ModelForm):

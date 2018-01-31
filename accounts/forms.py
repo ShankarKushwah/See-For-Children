@@ -4,11 +4,16 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
+
 class NGOForm(forms.ModelForm):
     class Meta:
         model = NGO
         fields = ['name', 'email', 'established', 'city', 'area', 'director',
                   'no_of_children', 'no_of_staff', 'state', 'zip_code', 'image']
+        widgets = {'established': DateInput(), }
 
 
 class SignUpForm(UserCreationForm):
