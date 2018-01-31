@@ -33,7 +33,7 @@ class Children(models.Model):
     ),
         max_length=1
     )
-    image = models.ImageField(upload_to='children/', blank=True)
+    image = models.ImageField(upload_to='children/')
     education = models.CharField(max_length=5, blank=True)
     school = models.CharField(max_length=50, blank=True)
     hobby = models.CharField(max_length=20, blank=True)
@@ -119,3 +119,9 @@ class Certificate(models.Model):
 class Photos(models.Model):
     photo = models.ImageField(upload_to='photo_gallery/')
     child = models.ForeignKey(Children, on_delete=models.CASCADE)
+
+
+class Photo(models.Model):
+    title = models.CharField(max_length=255, blank=True)
+    file = models.FileField(upload_to='photos/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)

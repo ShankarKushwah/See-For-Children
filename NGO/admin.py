@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import NGO, Events, Children, Staff, Donor, Certificate, Photos
+from .models import NGO, Events, Children, Staff, Donor, Certificate, Photo
 
 
 class NGOAdmin(admin.ModelAdmin):
@@ -42,4 +42,4 @@ class CertificateAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Certificate, CertificateAdmin)
-admin.site.register(Photos)
+admin.site.register(Photo)

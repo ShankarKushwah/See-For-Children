@@ -1,14 +1,15 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+from django.views import View
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import authenticate, login, update_session_auth_hash
 from django.contrib.auth import logout
 from django.db.models import Q
 from django.contrib.auth.forms import PasswordChangeForm
-from NGO.models import NGO, Events, Children, Staff, Donor, Certificate, Photos
+from NGO.models import NGO, Events, Children, Staff, Donor, Certificate, Photos, Photo
 from superadmin.models import Invoice
-from .forms import EventForm, ChildrenForm, CertificateForm, NGOForm
+from .forms import EventForm, ChildrenForm, CertificateForm, NGOForm, PhotoForm
 
 
 @login_required
@@ -42,11 +43,10 @@ def children(request):
 @login_required
 def children_detail(request, id):
     child = get_object_or_404(Children, id=id)
-    ph = Photos.objects.filter()
     don = Donor.objects.all()
     return render(request,
                   'ngo/children_detail.html',
-                  {'child': child, 'photos': ph, 'donor': don})
+                  {'child': child, 'donor': don})
 
 
 @login_required
@@ -302,3 +302,18 @@ def change_password(request):
 def photos(request):
     images = Photos.objects.all()
     return render(request, 'ngo/children_detail.html', {'photos': images})
+
+
+class BasicUploadView(View):
+    def get(self, request):
+        photo_list = Photo.objects.all()
+        return render(self.request, 'ngo/gallery.html', {'photos': photo_list})
+
+    def post(self, request):
+        form = PhotoForm(self.request.POST, self.request.FILES)
+        if form.is_valid():
+            photo = form.save()
+            data = {'is_valid': True, 'name': photo.file.name, 'url': photo.file.url}
+        else:
+            data = {'is_valid': False}
+        return JsonResponse(data)

@@ -1,14 +1,48 @@
 {% extends 'ngo/base.html' %}
+
+{% load static %}
+
+{% block title %}Basic Upload{% endblock %}
+
+{% block javascript %}
+  {# JQUERY FILE UPLOAD SCRIPTS #}
+  <script src="{% static 'js/jquery-file-upload/vendor/jquery.ui.widget.js' %}"></script>
+  <script src="{% static 'js/jquery-file-upload/jquery.iframe-transport.js' %}"></script>
+  <script src="{% static 'js/jquery-file-upload/jquery.fileupload.js' %}"></script>
+
+  {# PHOTOS PAGE SCRIPTS #}
+  <script src="{% static 'photos/js/basic-upload.js' %}"></script>
+{% endblock %}
+
 {% block content %}
     <div class="content-wrapper">
     <section class="content">
+  <div style="margin-bottom: 20px;">
+    <button type="button" class="btn btn-primary js-upload-photos">
+      <span class="glyphicon glyphicon-cloud-upload"></span> Upload photos
+    </button>
+    <input id="fileupload" type="file" name="file" multiple
+           style="display: none;"
+           data-url=""
+           data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+  </div>
 
-{% for p in photos %}
-    <img src="{{ p.photo.url }}"/>
-        {% endfor %}
-
-
-
+  <table id="gallery" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Photo</th>
+		<th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for photo in photos %}
+        <tr>
+          <td><a href="{{ photo.file.url }}">{{ photo.file.name }}</a></td>
+          <td><img src="{{ photo.file.url }}" height=40 width=40/></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
     </section>
     </div>
 {% endblock %}

@@ -1,12 +1,17 @@
 from django import forms
-from .models import Events, Children, Certificate, NGO, Photos
+from .models import Events, Children, Certificate, NGO, Photo
 from django.contrib.auth.forms import UserChangeForm
+
+
+class DateInput(forms.DateInput):
+    input_type = 'date'
 
 
 class EventForm(forms.ModelForm):
     class Meta:
         model = Events
         fields = ['name', 'date', 'place', 'description', 'organizer', 'time', 'type', 'image']
+        widgets = {'date': DateInput()}
 
 
 class ChildrenForm(forms.ModelForm):
@@ -14,6 +19,7 @@ class ChildrenForm(forms.ModelForm):
         model = Children
         fields = ['name', 'dob', 'gender', 'place_found', 'image', 'description', 'education', 'school', 'hobby',
                   'adoption_date', 'video_link']
+        widgets = {'dob': DateInput(), 'adoption_date': DateInput()}
 
 
 class CertificateForm(forms.ModelForm):
@@ -30,7 +36,7 @@ class NGOForm(forms.ModelForm):
                   'established', 'area', 'image']
 
 
-class PhotosForm(forms.ModelForm):
+class PhotoForm(forms.ModelForm):
     class Meta:
-        model = Photos
-        fields = ['photo']
+        model = Photo
+        fields = ['file', ]
