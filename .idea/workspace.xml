@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72ea6ed6-155e-41b6-9ed3-9528d224e53c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ZING_9.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/ZING_9.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/templates/ngo/base.html" afterPath="$PROJECT_DIR$/templates/ngo/base.html" />
+      <change beforePath="$PROJECT_DIR$/templates/ngo/notification.html" afterPath="$PROJECT_DIR$/templates/ngo/notification.html" />
       <change beforePath="$PROJECT_DIR$/templates/ngo/report_detail.html" afterPath="$PROJECT_DIR$/templates/ngo/report_detail.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -76,13 +80,23 @@
       <file leaf-file-name="report_detail.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/ngo/report_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="48" lean-forward="false" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
+            <state relative-caret-position="102">
+              <caret line="6" column="50" lean-forward="false" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
               <folding>
                 <element signature="e#126#150#0#HTML" expanded="true" />
-                <element signature="e#206#326#0#HTML" expanded="true" />
-                <element signature="e#393#416#0#HTML" expanded="true" />
+                <element signature="e#435#461#0#HTML" expanded="true" />
+                <element signature="e#1205#1231#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notification.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/ngo/notification.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -189,7 +203,6 @@
         <option value="$PROJECT_DIR$/NGO/forms.py" />
         <option value="$PROJECT_DIR$/templates/ngo/profile.html" />
         <option value="$PROJECT_DIR$/templates/super_admin/ngo_detail.html" />
-        <option value="$PROJECT_DIR$/templates/ngo/base.html" />
         <option value="$PROJECT_DIR$/NGO/urls.py" />
         <option value="$PROJECT_DIR$/templates/super_admin/send_detail.html" />
         <option value="$PROJECT_DIR$/superadmin/forms.py" />
@@ -197,6 +210,7 @@
         <option value="$PROJECT_DIR$/superadmin/models.py" />
         <option value="$PROJECT_DIR$/templates/ngo/reports.html" />
         <option value="$PROJECT_DIR$/templates/ngo/notification.html" />
+        <option value="$PROJECT_DIR$/templates/ngo/base.html" />
         <option value="$PROJECT_DIR$/templates/ngo/report_detail.html" />
       </list>
     </option>
@@ -725,14 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ngo/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="250" column="27" lean-forward="false" selection-start-line="250" selection-start-column="27" selection-end-line="250" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NGO/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -804,14 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ngo/notification.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="19" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="9" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ngo/children_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -836,14 +834,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ngo/notification.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ngo/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ngo/report_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="48" lean-forward="false" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
+        <state relative-caret-position="102">
+          <caret line="6" column="50" lean-forward="false" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
           <folding>
             <element signature="e#126#150#0#HTML" expanded="true" />
-            <element signature="e#206#326#0#HTML" expanded="true" />
-            <element signature="e#393#416#0#HTML" expanded="true" />
+            <element signature="e#435#461#0#HTML" expanded="true" />
+            <element signature="e#1205#1231#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
