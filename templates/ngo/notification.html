@@ -2,15 +2,21 @@
 {% load static %}
 {% block content %}
     <div class="content-wrapper">
-    <section class="content">
 
+
+
+
+<section class="content">
     <h2>Notifications</h2><hr/>
-{#     {% for i in form %}#}
-{#            <p>Admin sends you invoice<a href="/notification_detail/{{ i.id }}"> {{ i.donor_id }}</a></p>#}
-{#     {% endfor %}#}
-    </section>
-    <div class="content">
-
-    </div>
+       <div class="col-md-6">
+           {% for form in form %}
+               <a href="/report_detail/{{ form.id }}">
+           <div class="alert alert-info">
+               <span>Admin sends report for {{ form.child_name }} ({{ form.child_code }}) at {{ form.time_stamp }}</span>
+           </div>
+               </a>
+           {% endfor %}
+       </div>
+</section>
     </div>
 {% endblock %}

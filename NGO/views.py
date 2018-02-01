@@ -239,7 +239,7 @@ def donor_detail(request, id):
 
 @login_required
 def notification_list(request):
-    form = Invoice.objects.all()
+    form = Invoice.objects.all().order_by('-time_stamp')
     return render(request, 'ngo/notification.html', {'form': form})
 
 

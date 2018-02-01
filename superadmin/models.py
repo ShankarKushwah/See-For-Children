@@ -24,4 +24,4 @@ class Invoice(models.Model):
     )
     date = models.DateField()
     paid = models.CharField(max_length=10)
-    time_stamp = models.DateTimeField(auto_now_add=True)
+    time_stamp = models.DateTimeField(auto_now=True, auto_created=True)
