@@ -6,20 +6,10 @@
         <div style="margin-left: 10%">
             <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-                {{ form.select_ngo.label_tag }}<br>
-                {{ form.select_ngo }}<br>
-                {{ form.child_name.label_tag }}<br>
-                {{ form.child_name }}<br>
-                {{ form.donor_id.label_tag }}<br>
-                {{ form.donor_id }}<br>
-                {{ form.donation_month.label_tag }}<br>
-                {{ form.donation_month }}<br>
-                {{ form.invoice.label_tag }}<br>
-                {{ form.invoice }}<br>
-                {{ form.date.label_tag }}<br>
-                {{ form.date }}<br>
-                {{ form.paid.label_tag }}<br>
-                {{ form.paid }}<br><br>
+                {% for form in form %}
+                    {{ form.label_tag }}<br>
+                    {{ form }}<br>
+                {% endfor %}
             <button type="submit" class="btn btn-primary">Send</button>
             </form>
         </div>

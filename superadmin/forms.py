@@ -9,6 +9,6 @@ class DateInput(forms.DateInput):
 class InvoiceForm(forms.ModelForm):
     class Meta:
         model = Invoice
-        fields = ['select_ngo', 'child_name', 'donor_id', 'donation_month', 'invoice', 'date', 'paid']
+        fields = ['select_ngo', 'child_name', 'child_code', 'donor_id', 'donation_month', 'date', 'paid']
         widgets = {'date': DateInput(), }
 

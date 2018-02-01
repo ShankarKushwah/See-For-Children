@@ -1,0 +1,18 @@
+{% extends 'ngo/base.html' %}
+{% block content %}
+    <div class="content-wrapper">
+    <section class="content">
+
+
+        <h2>Reports Page</h2>
+        <hr/>
+        {% for form in form%}
+            <ul>
+                <li>
+                   <a href="/report_detail/{{ form.id }}">Admin sends you report.</a><br>
+                </li>
+            </ul>
+        {% endfor %}
+    </section>
+    </div>
+{% endblock %}

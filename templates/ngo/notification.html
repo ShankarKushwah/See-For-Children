@@ -3,29 +3,11 @@
 {% block content %}
     <div class="content-wrapper">
     <section class="content">
-    <h2>Notification page</h2><hr/>
-   <input type="checkbox" onClick="toggle(this)">
-  <select name="cars">
-    <option value="volvo">Action</option>
-    <option value="saab">Delete</option>
-  </select>
-  <button> Submit</button><hr/>
 
-     {% for i in form %}
-            <p><input type="checkbox" name="foo" value="1"> Admin sents you invoice<a href="/notification_detail/{{ i.id }}"> {{ i.donor_id }}</a></p>
-     {% endfor %}
-
-<script language="JavaScript">
-function toggle(source) {
-  checkboxes = document.getElementsByName('foo');
-  for(var i=0, n=checkboxes.length;i<n;i++) {
-    checkboxes[i].checked = source.checked;
-  }
-}
-</script>
-    </section>
-    <section class="content">
-
+    <h2>Notifications</h2><hr/>
+{#     {% for i in form %}#}
+{#            <p>Admin sends you invoice<a href="/notification_detail/{{ i.id }}"> {{ i.donor_id }}</a></p>#}
+{#     {% endfor %}#}
     </section>
     </div>
 {% endblock %}

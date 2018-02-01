@@ -317,3 +317,16 @@ class BasicUploadView(View):
         else:
             data = {'is_valid': False}
         return JsonResponse(data)
+
+
+@login_required
+def reports(request):
+    form = Invoice.objects.filter().order_by('-time_stamp')
+    return render(request, 'ngo/reports.html', {'form': form})
+
+
+@login_required
+def report_detail(request, id):
+    form = get_object_or_404(Invoice, id=id)
+    return render(request, 'ngo/report_detail.html', {'form': form})
+

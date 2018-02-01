@@ -26,5 +26,7 @@ urlpatterns = [
     url(r'^edit_children/(?P<id>\d+)/$', views.children_edit, name='edit_children'),
     url(r'^change_password/$', views.change_password, name='change_password'),
     url(r'^gallery/$', views.BasicUploadView.as_view(), name='BasicUploadView'),
+    url(r'^reports/$', views.reports, name='reports'),
+    url(r'^report_detail/(?P<id>\d+)/$', views.report_detail, name='report_detail'),
 
 ]
