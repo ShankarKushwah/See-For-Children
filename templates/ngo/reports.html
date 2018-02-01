@@ -6,13 +6,28 @@
 
         <h2>Reports Page</h2>
         <hr/>
-        {% for form in form%}
-            <ul>
-                <li>
-                   <a href="/report_detail/{{ form.id }}">Admin sends you report.</a><br>
-                </li>
-            </ul>
+        <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Index</th>
+      <th scope="col">Child Name</th>
+      <th scope="col">Child Code</th>
+      <th scope="col">Donor ID</th>
+      <th scope="col">Activity</th>
+    </tr>
+  </thead>
+  <tbody>
+        {% for event in form %}
+     <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ event.child_name }}</td>
+      <td>{{ event.child_code }}</td>
+      <td>{{ event.donor_id }}</td>
+         <td><a href="/report_detail/{{ event.id }}"><button class="btn btn-primary"> View Details  </button></a> <button class="btn btn-primary">Create Report</button></td>
+     </tr>
         {% endfor %}
+  </tbody>
+</table>
     </section>
     </div>
 {% endblock %}

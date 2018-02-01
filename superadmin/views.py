@@ -60,7 +60,7 @@ def send_detail(request):
         form = InvoiceForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return HttpResponse("send...")
+            return redirect('/superadmin/send_detail/')
     else:
         form = InvoiceForm()
         return render(request, 'super_admin/send_detail.html', {'form': form})
