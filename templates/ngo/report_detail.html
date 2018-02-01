@@ -2,21 +2,50 @@
 {% block content %}
     <div class="content-wrapper">
     <section class="content">
-        <h2 style="margin-left: 30%">Report detail Page</h2><hr/>
+        <h1 style="margin-left: 30%"><b>Report detail Page</b></h1><hr/><hr/>
 
-        <div class="container">
+
+        <div style="background-image: url(https://seeingisforgetting.com/wp-content/uploads/2017/05/pure-white-background.jpg); height: auto; width: 620px; margin-left: 15%; border: 1px solid #121212;  border-radius: 10px;">
+
+
+           <div class="container">
             <div class="row">
+                <div class="col-md-3">
+                    <h4>Child Name</h4>
+                    <h4>Child code</h4>
+                    <h4>Donor ID</h4>
+                    <h4>Donation Month</h4>
+                    <h4>Date</h4>
+                    <h4>Month Paid</h4>
+                    <h4>Paid</h4>
+                    <h4>Sent By</h4>
+                </div>
+                <div class="col-md-2">
+                    <h4>:</h4>
+                    <h4>:</h4>
+                    <h4>:</h4>
+                    <h4>:</h4>
+                    <h4>:</h4>
+                    <h4>:</h4>
+                    <h4>:</h4>
+                    <h4>:</h4>
+                </div>
                 <div class="col-md-6">
-                    <h4><b>Child Name: </b>{{ form.child_name }}</h4>
-                    <h4><b>Child code: </b>{{ form.id }}</h4>
-                    <h4><b>Donor ID: </b>{{ form.donor_id }}</h4>
-                    <h4><b>Donation Month: </b>{{ form.donation_month }}</h4>
-                    <h4><b>Date : </b>{{ form.date }}</h4>
-                    <h4><b>Month Paid: </b>{{ form.paid }}</h4>
-                    <h4><b>Paid: </b>{{ form.paid }}</h4>
-                    <h4><b>Sent By: </b>Shankar</h4>
+                    <h4>Abhishek</h4>
+                    <h4>{{ form.child_code }}</h4>
+                    <h4>{{ form.donor_id }}</h4>
+                    <h4>{{ form.donation_month.capitalize }}</h4>
+                    <h4>{{ form.date }}</h4>
+                    <h4>{{ form.paid }}</h4>
+                    <h4>{{ form.paid }}</h4>
+                    <h4>Shankar</h4>
                 </div>
             </div>
+        </div>
+
+
+
+
         </div>
 
     </section>
