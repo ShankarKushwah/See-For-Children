@@ -3,8 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, JsonResponse
 from django.views import View
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth import authenticate, login, update_session_auth_hash
-from django.contrib.auth import logout
+from django.contrib.auth import update_session_auth_hash
 from django.db.models import Q
 from django.contrib.auth.forms import PasswordChangeForm
 from NGO.models import NGO, Events, Children, Staff, Donor, Certificate, Photos, Photo
