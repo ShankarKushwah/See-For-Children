@@ -25,10 +25,7 @@ def home(request):
             ch = ch.filter(
                 Q(name__icontains=query)
             ).distinct()
-            eve = eve.filter(
-                Q(name__icontains=query)
-            ).distinct()
-            return render(request, 'ngo/index.html', {'ngo': ngo, 'ch': ch, 'eve': eve})
+            return render(request, 'ngo/index.html', {'ngo': ngo, 'ch': ch})
         else:
             return render(request, 'ngo/index.html')
 
@@ -74,7 +71,7 @@ def children_add(request):
                     }
                     return render(request, 'ngo/children_add.html', context)
             child = form.save(commit=False)
-            child = ngo
+            child.ngo = ngo
             child.save()
             return redirect('/children_list/')
         context = {
