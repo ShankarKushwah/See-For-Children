@@ -25,7 +25,10 @@ def home(request):
             ch = ch.filter(
                 Q(name__icontains=query)
             ).distinct()
-            return render(request, 'ngo/index.html', {'ngo': ngo, 'ch': ch})
+            eve = eve.filter(
+                Q(name__icontains=query)
+            ).distinct()
+            return render(request, 'ngo/index.html', {'ngo': ngo, 'ch': ch, 'eve': eve})
         else:
             return render(request, 'ngo/index.html')
 
