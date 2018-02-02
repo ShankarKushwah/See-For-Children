@@ -1,6 +1,5 @@
 from django import forms
 from .models import Events, Children, Certificate, NGO, Photo
-from django.contrib.auth.forms import UserChangeForm
 
 
 class DateInput(forms.DateInput):

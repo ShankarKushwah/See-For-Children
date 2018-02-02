@@ -1,6 +1,5 @@
 from django.contrib.auth import authenticate, login
-from django.shortcuts import render, redirect
-
+from django.shortcuts import render, redirect, get_object_or_404
 from accounts.forms import NGOForm, SignUpForm
 
 
@@ -9,7 +8,7 @@ def register(request):
         form = NGOForm(request.POST or None, request.FILES or None)
         if form.is_valid():
             form.save()
-            return render('saved')
+            return redirect('/accounts/login/')
     else:
         form = NGOForm()
     return render(request, 'accounts/registration.html', {'form': form})

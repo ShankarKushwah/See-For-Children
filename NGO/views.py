@@ -19,7 +19,18 @@ def home(request):
     else:
         ngo = NGO.objects.filter(user=request.user)
         ch = Children.objects.filter(ngo=ngo)
-        return render(request, 'ngo/index.html', {'ngo': ngo, 'ch': ch})
+        eve = Events.objects.filter(ngo=ngo)
+        query = request.GET.get("q")
+        if query:
+            ch = ch.filter(
+                Q(name__icontains=query)
+            ).distinct()
+            eve = eve.filter(
+                Q(name__icontains=query)
+            ).distinct()
+            return render(request, 'ngo/index.html', {'ngo': ngo, 'ch': ch, 'eve': eve})
+        else:
+            return render(request, 'ngo/index.html')
 
 
 @login_required
@@ -63,7 +74,7 @@ def children_add(request):
                     }
                     return render(request, 'ngo/children_add.html', context)
             child = form.save(commit=False)
-            child.ngo = ngo
+            child = ngo
             child.save()
             return redirect('/children_list/')
         context = {

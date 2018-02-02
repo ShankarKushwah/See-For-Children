@@ -14,7 +14,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="{% url 'register' %}">
+            <form role="form" method="post" action="/" enctype="multipart/form-data">
                 {% csrf_token %}
               <div class="box-body">
                   {% for field in form %}

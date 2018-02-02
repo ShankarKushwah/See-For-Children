@@ -62,6 +62,27 @@
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
+<div class="container">
+    <div class="row">
+    <div class="col-md-6">
+        {% if ch %}
+             <h3>list of search children....</h3>
+            {% for ch in ch %}
+                <h2><a href="/children_detail/{{ ch.id }}">{{ ch.name }}</a></h2>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="col-md-6">
+        {% if eve %}
+            <h3 >List of search events...</h3>
+            {% for eve in eve %}
+                <h2><a href="/event_detail/{{ eve.id }}">{{ eve.name }}</a> </h2>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+</div>
+
         <!-- ./col -->
 {#        <div class="col-lg-3 col-xs-6">#}
 {#          <!-- small box -->#}
