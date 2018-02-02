@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72ea6ed6-155e-41b6-9ed3-9528d224e53c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/NGO/views.py" afterPath="$PROJECT_DIR$/NGO/views.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/templates/ngo/index.html" afterPath="$PROJECT_DIR$/templates/ngo/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/ngo/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="47" column="23" lean-forward="false" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+            <state relative-caret-position="374">
+              <caret line="73" column="87" lean-forward="false" selection-start-line="73" selection-start-column="87" selection-end-line="73" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -50,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NGO/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+              <caret line="25" column="40" lean-forward="false" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <element signature="e#3060#3479#0" expanded="false" />
@@ -175,9 +176,9 @@
         <option value="$PROJECT_DIR$/templates/ngo/children_all.html" />
         <option value="$PROJECT_DIR$/templates/super_admin/base.html" />
         <option value="$PROJECT_DIR$/templates/ngo/base.html" />
-        <option value="$PROJECT_DIR$/templates/ngo/index.html" />
         <option value="$PROJECT_DIR$/NGO/models.py" />
         <option value="$PROJECT_DIR$/NGO/views.py" />
+        <option value="$PROJECT_DIR$/templates/ngo/index.html" />
       </list>
     </option>
   </component>
@@ -702,14 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ngo/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="47" column="23" lean-forward="false" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NGO/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -721,7 +714,7 @@
     <entry file="file://$PROJECT_DIR$/NGO/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+          <caret line="25" column="40" lean-forward="false" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
             <element signature="e#3060#3479#0" expanded="false" />
@@ -740,6 +733,14 @@
             <element signature="e#9707#9811#0" expanded="false" />
             <element signature="e#9847#10318#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ngo/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="73" column="87" lean-forward="false" selection-start-line="73" selection-start-column="87" selection-end-line="73" selection-end-column="87" />
+          <folding />
         </state>
       </provider>
     </entry>

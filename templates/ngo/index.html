@@ -71,7 +71,7 @@
         {% if ch %}
              <h3>list of search children....</h3>
             {% for ch in ch %}
-                <h2><a href="/children_detail/{{ ch.id }}">{{ ch.name }}</a></h2>
+                <a href="/children_detail/{{ ch.id }}"><h2>{{ ch.name }}</h2> <p>Child Code: {{ ch.code }}</p></a>
             {% endfor %}
         {% endif %}
     </div>
