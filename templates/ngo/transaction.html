@@ -33,21 +33,10 @@
 </table><hr/>
         <section class="content" style="margin-left: 20%">
             <h3>Filter by date</h3>
-        <input type="text" name="daterange" value="01/01/2017 - 01/01/2018" /> <button type="submit">Search</button>
+        <input type="text" name="daterange" value="01/01/2017 - 01/01/2018" /> <button class="btn btn-primary">Search</button>
         <script type="text/javascript">
             $(function() {
-                $('input[name="daterange"]').daterangepicker(
-                    {
-                        local: {
-                            format: 'DD-MM-YYYY'
-                        },
-                        startDate: '01-01-2017',
-                        endDate: '01-01-2018'
-                    },
-                    function (start, end, label) {
-                        alert("A new date chosen: " + start.format('DD-MM-YYYY') + 'to' + end.format('DD-MM-YYYY'));
-                    }
-                );
+                $('input[name="daterange"]').daterangepicker();
             });
         </script>
 </section>
