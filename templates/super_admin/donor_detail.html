@@ -5,17 +5,21 @@
     <section class="content">
     <hr/>
 <div style="margin-left: 5%">
-  <div class="col-md-2">
-        <img src="{{ form.image.url}}" width="150" height="150">
+  <div class="col-md-4">
+        <img src="{{ form.image.url}}" width="200" height="200">
   </div>
-  <div class="col-md-8">
+  <div class="col-md-4">
         <h4><b>Donor Name: </b>{{form.name}}</h4>
-        <h4><b>Child Code: </b>{{form.child_code}}</h4>
-        <h4><b>Sent by: </b>See4Children</h4>
-        <h4><b>Donor Paid: </b>{{form.donor_paid}}</h4>
-        <h4><b>Last Paid: </b>{{form.last_paid}}</h4><br>
+        <h4><b>Donor ID: </b>{{form.id}}</h4>
+        <h4><b>Donor Country: </b>India</h4>
+        <h4><b>Donor Full Address: </b>{{form.city}}</h4>
+        <h4><b>Current Child Code: </b>{{form.child_code}}</h4>
+        <h4><b>Current Child Name: </b>{{form.name}}</h4>
+        <h4><b>NGO (Child Reference): </b>See4Children</h4>
+        <hr/>
   </div>
 <hr/>
+
 <table class="table" border="0">
   <thead><br>
     <tr>
@@ -57,6 +61,93 @@
 </table>
 
 </div>
+    </section>
+    <section class="content">
+    <div>
+        <h1><u>Previous Child list</u></h1>
+        <table class="table" border="0">
+  <thead><br>
+    <tr>
+      <th scope="col">Index</th>
+      <th scope="col">Sent by</th>
+      <th scope="col">Reference</th>
+      <th scope="col">Month</th>
+      <th scope="col">Paid</th>
+      <th scope="col">Report</th>
+    </tr>
+  </thead>
+  <tbody>
+
+     <tr>
+      <th scope="row">01</th>
+      <td>See4Children</td>
+      <td>Abhishek</td>
+      <td>March</td>
+      <td>5000/-</td>
+      <td><button class="btn btn-primary">Create</button></td>
+     </tr>
+     <tr>
+      <th scope="row">02</th>
+      <td>See4Children</td>
+      <td>Abhishek</td>
+      <td>May</td>
+      <td>100/-</td>
+      <td><button class="btn btn-primary">Sent</button></td>
+     </tr>
+     <tr>
+      <th scope="row">03</th>
+      <td>See4Children</td>
+      <td>Abhishek</td>
+      <td>July</td>
+      <td>1000/-</td>
+      <td><button class="btn btn-primary">Sent</button></td>
+     </tr>
+  </tbody>
+</table>
+        <hr/>
+        <h1><u>Last paid history</u></h1>
+        <table class="table" border="0">
+  <thead><br>
+    <tr>
+      <th scope="col">Index</th>
+      <th scope="col">Sent by</th>
+      <th scope="col">Reference</th>
+      <th scope="col">Month</th>
+      <th scope="col">Paid</th>
+      <th scope="col">Report</th>
+    </tr>
+  </thead>
+  <tbody>
+
+     <tr>
+      <th scope="row">01</th>
+      <td>See4Children</td>
+      <td>Abhishek</td>
+      <td>March</td>
+      <td>5000/-</td>
+      <td><button class="btn btn-primary">Create</button></td>
+     </tr>
+     <tr>
+      <th scope="row">02</th>
+      <td>See4Children</td>
+      <td>Abhishek</td>
+      <td>May</td>
+      <td>100/-</td>
+      <td><button class="btn btn-primary">Sent</button></td>
+     </tr>
+     <tr>
+      <th scope="row">03</th>
+      <td>See4Children</td>
+      <td>Abhishek</td>
+      <td>July</td>
+      <td>1000/-</td>
+      <td><button class="btn btn-primary">Sent</button></td>
+     </tr>
+  </tbody>
+</table>
+        <hr/>
+        <h3>Member Since - Feb, 2016</h3>
+    </div>
     </section>
     </div>
 {% endblock %}

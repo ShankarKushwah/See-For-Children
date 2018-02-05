@@ -126,14 +126,6 @@ def event_details(request, id):
 
 
 @login_required
-def report_print(request, id):
-    form = get_object_or_404(Invoice, id=id)
-    return render(request,
-                  'ngo/print_document.html',
-                  {'form': form})
-
-
-@login_required
 def events_add(request):
     form = EventForm(request.POST or None, request.FILES or None)
     ngo = get_object_or_404(NGO, user=request.user)
@@ -348,3 +340,10 @@ def report_detail(request, id):
     form = get_object_or_404(Invoice, id=id)
     return render(request, 'ngo/report_detail.html', {'form': form})
 
+
+@login_required
+def report_print(request, id):
+    form = get_object_or_404(Invoice, id=id)
+    return render(request,
+                  'ngo/print_document.html',
+                  {'form': form})

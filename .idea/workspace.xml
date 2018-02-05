@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72ea6ed6-155e-41b6-9ed3-9528d224e53c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ZING_9.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/ZING_9.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/NGO/urls.py" afterPath="$PROJECT_DIR$/NGO/urls.py" />
       <change beforePath="$PROJECT_DIR$/NGO/views.py" afterPath="$PROJECT_DIR$/NGO/views.py" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change beforePath="$PROJECT_DIR$/templates/ngo/report_detail.html" afterPath="$PROJECT_DIR$/templates/ngo/report_detail.html" />
-      <change beforePath="$PROJECT_DIR$/templates/super_admin/donor_list.html" afterPath="$PROJECT_DIR$/templates/super_admin/donor_list.html" />
+      <change beforePath="$PROJECT_DIR$/templates/ngo/print_document.html" afterPath="$PROJECT_DIR$/templates/ngo/print_document.html" />
+      <change beforePath="$PROJECT_DIR$/templates/super_admin/donor_detail.html" afterPath="$PROJECT_DIR$/templates/super_admin/donor_detail.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +27,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NGO/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="129" column="36" lean-forward="false" selection-start-line="129" selection-start-column="36" selection-end-line="129" selection-end-column="36" />
+            <state relative-caret-position="1411">
+              <caret line="348" column="33" lean-forward="true" selection-start-line="348" selection-start-column="33" selection-end-line="348" selection-end-column="33" />
               <folding>
                 <element signature="e#617#1264#0" expanded="false" />
                 <element signature="e#1310#1863#0" expanded="false" />
@@ -39,38 +36,44 @@
                 <element signature="e#2169#2931#0" expanded="false" />
                 <element signature="e#2986#3405#0" expanded="false" />
                 <element signature="e#3453#3999#0" expanded="false" />
-                <element signature="e#4446#5128#0" expanded="false" />
-                <element signature="e#5177#5715#0" expanded="false" />
-                <element signature="e#5765#6302#0" expanded="false" />
-                <element signature="e#6362#6494#0" expanded="false" />
-                <element signature="e#6547#7257#0" expanded="false" />
-                <element signature="e#7318#7434#0" expanded="false" />
-                <element signature="e#7477#7573#0" expanded="false" />
-                <element signature="e#7627#7772#0" expanded="false" />
-                <element signature="e#7820#7907#0" expanded="false" />
-                <element signature="e#7961#8067#0" expanded="false" />
-                <element signature="e#8122#8242#0" expanded="false" />
-                <element signature="e#8303#8418#0" expanded="false" />
-                <element signature="e#8467#8513#0" expanded="false" />
-                <element signature="e#8558#8663#0" expanded="false" />
-                <element signature="e#8717#9130#0" expanded="false" />
-                <element signature="e#9172#9211#0" expanded="false" />
-                <element signature="e#9248#9805#0" expanded="false" />
-                <element signature="e#9833#9937#0" expanded="false" />
-                <element signature="e#9973#10444#0" expanded="false" />
-                <element signature="e#10662#10771#0" expanded="false" />
+                <element signature="e#4054#4198#0" expanded="false" />
+                <element signature="e#4246#4928#0" expanded="false" />
+                <element signature="e#4977#5515#0" expanded="false" />
+                <element signature="e#5565#6102#0" expanded="false" />
+                <element signature="e#6162#6294#0" expanded="false" />
+                <element signature="e#6347#7057#0" expanded="false" />
+                <element signature="e#7118#7234#0" expanded="false" />
+                <element signature="e#7277#7373#0" expanded="false" />
+                <element signature="e#7427#7572#0" expanded="false" />
+                <element signature="e#7620#7707#0" expanded="false" />
+                <element signature="e#7761#7867#0" expanded="false" />
+                <element signature="e#7922#8042#0" expanded="false" />
+                <element signature="e#8103#8218#0" expanded="false" />
+                <element signature="e#8267#8313#0" expanded="false" />
+                <element signature="e#8358#8463#0" expanded="false" />
+                <element signature="e#8517#8930#0" expanded="false" />
+                <element signature="e#8972#9011#0" expanded="false" />
+                <element signature="e#9048#9605#0" expanded="false" />
+                <element signature="e#9633#9737#0" expanded="false" />
+                <element signature="e#9773#10244#0" expanded="false" />
+                <element signature="e#10289#10407#0" expanded="false" />
+                <element signature="e#10462#10571#0" expanded="false" />
+                <element signature="e#10625#10771#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="report_detail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/ngo/report_detail.html">
+      <file leaf-file-name="donor_detail.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/super_admin/donor_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+            <state relative-caret-position="62">
+              <caret line="8" column="61" lean-forward="false" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
               <folding>
-                <element signature="e#1730#1749#0#HTML" expanded="true" />
+                <element signature="e#155#178#0#HTML" expanded="true" />
+                <element signature="e#715#1645#0#HTML" expanded="false" />
+                <element signature="e#1761#2691#0#HTML" expanded="false" />
+                <element signature="e#2756#3686#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -82,19 +85,6 @@
             <state relative-caret-position="402">
               <caret line="31" column="51" lean-forward="false" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="print_document.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/ngo/print_document.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-              <folding>
-                <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -165,7 +155,6 @@
         <option value="$PROJECT_DIR$/templates/ngo/upcoming_event.html" />
         <option value="$PROJECT_DIR$/templates/ngo/children_edit.html" />
         <option value="$PROJECT_DIR$/templates/ngo/edit_children.html" />
-        <option value="$PROJECT_DIR$/templates/super_admin/donor_detail.html" />
         <option value="$PROJECT_DIR$/templates/ngo/events.html" />
         <option value="$PROJECT_DIR$/templates/accounts/signup.html" />
         <option value="$PROJECT_DIR$/NGO/admin.py" />
@@ -206,10 +195,11 @@
         <option value="$PROJECT_DIR$/NGO/models.py" />
         <option value="$PROJECT_DIR$/templates/ngo/base.html" />
         <option value="$PROJECT_DIR$/NGO/urls.py" />
-        <option value="$PROJECT_DIR$/NGO/views.py" />
         <option value="$PROJECT_DIR$/templates/ngo/report_detail.html" />
         <option value="$PROJECT_DIR$/templates/ngo/event_details.html" />
         <option value="$PROJECT_DIR$/templates/ngo/print_document.html" />
+        <option value="$PROJECT_DIR$/NGO/views.py" />
+        <option value="$PROJECT_DIR$/templates/super_admin/donor_detail.html" />
       </list>
     </option>
   </component>
@@ -280,7 +270,7 @@
               <item name="see4children" type="b2602c69:ProjectViewProjectNode" />
               <item name="see4children" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="ngo" type="462c0819:PsiDirectoryNode" />
+              <item name="super_admin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -482,7 +472,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/NGO/static/dist/img/user6-128x128.jpg" />
     <entry file="file://$PROJECT_DIR$/NGO/static/dist/img/credit/american-express.png" />
     <entry file="file://$PROJECT_DIR$/NGO/static/dist/img/credit/cirrus.png" />
     <entry file="file://$PROJECT_DIR$/NGO/static/dist/img/credit/mastercard.png" />
@@ -706,14 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NGO/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="41" column="44" lean-forward="false" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/super_admin/donor_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -726,14 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
           <caret line="34" column="14" lean-forward="true" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NGO/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="31" column="51" lean-forward="false" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -754,20 +727,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ngo/print_document.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NGO/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="41" column="44" lean-forward="false" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ngo/report_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+          <caret line="3" column="28" lean-forward="false" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
           <folding>
             <element signature="e#1730#1749#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/NGO/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="31" column="51" lean-forward="false" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/NGO/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="129" column="36" lean-forward="false" selection-start-line="129" selection-start-column="36" selection-end-line="129" selection-end-column="36" />
+        <state relative-caret-position="1411">
+          <caret line="348" column="33" lean-forward="true" selection-start-line="348" selection-start-column="33" selection-end-line="348" selection-end-column="33" />
           <folding>
             <element signature="e#617#1264#0" expanded="false" />
             <element signature="e#1310#1863#0" expanded="false" />
@@ -775,37 +775,42 @@
             <element signature="e#2169#2931#0" expanded="false" />
             <element signature="e#2986#3405#0" expanded="false" />
             <element signature="e#3453#3999#0" expanded="false" />
-            <element signature="e#4446#5128#0" expanded="false" />
-            <element signature="e#5177#5715#0" expanded="false" />
-            <element signature="e#5765#6302#0" expanded="false" />
-            <element signature="e#6362#6494#0" expanded="false" />
-            <element signature="e#6547#7257#0" expanded="false" />
-            <element signature="e#7318#7434#0" expanded="false" />
-            <element signature="e#7477#7573#0" expanded="false" />
-            <element signature="e#7627#7772#0" expanded="false" />
-            <element signature="e#7820#7907#0" expanded="false" />
-            <element signature="e#7961#8067#0" expanded="false" />
-            <element signature="e#8122#8242#0" expanded="false" />
-            <element signature="e#8303#8418#0" expanded="false" />
-            <element signature="e#8467#8513#0" expanded="false" />
-            <element signature="e#8558#8663#0" expanded="false" />
-            <element signature="e#8717#9130#0" expanded="false" />
-            <element signature="e#9172#9211#0" expanded="false" />
-            <element signature="e#9248#9805#0" expanded="false" />
-            <element signature="e#9833#9937#0" expanded="false" />
-            <element signature="e#9973#10444#0" expanded="false" />
-            <element signature="e#10662#10771#0" expanded="false" />
+            <element signature="e#4054#4198#0" expanded="false" />
+            <element signature="e#4246#4928#0" expanded="false" />
+            <element signature="e#4977#5515#0" expanded="false" />
+            <element signature="e#5565#6102#0" expanded="false" />
+            <element signature="e#6162#6294#0" expanded="false" />
+            <element signature="e#6347#7057#0" expanded="false" />
+            <element signature="e#7118#7234#0" expanded="false" />
+            <element signature="e#7277#7373#0" expanded="false" />
+            <element signature="e#7427#7572#0" expanded="false" />
+            <element signature="e#7620#7707#0" expanded="false" />
+            <element signature="e#7761#7867#0" expanded="false" />
+            <element signature="e#7922#8042#0" expanded="false" />
+            <element signature="e#8103#8218#0" expanded="false" />
+            <element signature="e#8267#8313#0" expanded="false" />
+            <element signature="e#8358#8463#0" expanded="false" />
+            <element signature="e#8517#8930#0" expanded="false" />
+            <element signature="e#8972#9011#0" expanded="false" />
+            <element signature="e#9048#9605#0" expanded="false" />
+            <element signature="e#9633#9737#0" expanded="false" />
+            <element signature="e#9773#10244#0" expanded="false" />
+            <element signature="e#10289#10407#0" expanded="false" />
+            <element signature="e#10462#10571#0" expanded="false" />
+            <element signature="e#10625#10771#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ngo/print_document.html">
+    <entry file="file://$PROJECT_DIR$/templates/super_admin/donor_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        <state relative-caret-position="62">
+          <caret line="8" column="61" lean-forward="false" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
           <folding>
-            <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="e#155#178#0#HTML" expanded="true" />
+            <element signature="e#715#1645#0#HTML" expanded="false" />
+            <element signature="e#1761#2691#0#HTML" expanded="false" />
+            <element signature="e#2756#3686#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
