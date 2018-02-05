@@ -1,0 +1,34 @@
+{% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'bower_components/font-awesome/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'dist/css/AdminLTE.min.css' %}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+
+    <body onload="window.print();">
+<div class="container">
+    <h1 style="margin-left: 33%">Report</h1>
+<table class="table table-responsive table-striped" style="padding-left: 10%">
+    <tr>
+        <td>Child name</td><td>{{ form.child_name }}</td>
+    </tr>
+    <tr>
+        <td>Child Code</td><td>{{ form.child_code }}</td>
+    </tr>
+    <tr>
+        <td>Donor ID</td><td>{{ form.donor_id }}</td>
+    </tr>
+    <tr>
+        <td>Donation Month</td><td>{{ form.donation_month }}</td>
+    </tr>
+    <tr>
+        <td>Date</td><td>{{ form.date }}</td>
+    </tr>
+    <tr>
+        <td>Paid</td><td>{{ form.paid }}</td>
+    </tr>
+    <tr>
+        <td>Sent By</td><td>See4Children</td>
+    </tr>
+</table>
+</div>

@@ -29,5 +29,6 @@ urlpatterns = [
     url(r'^gallery/$', views.BasicUploadView.as_view(), name='BasicUploadView'),
     url(r'^reports/$', views.reports, name='reports'),
     url(r'^report_detail/(?P<id>\d+)/$', views.report_detail, name='report_detail'),
+    url(r'^print_report/(?P<id>\d+)/$', views.report_print, name='print_report'),
 
 ]

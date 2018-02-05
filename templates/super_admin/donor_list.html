@@ -6,10 +6,12 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">ID</th>
+      <th scope="col">Index</th>
+      <th scope="col">Donor Name</th>
+      <th scope="col">Child Name</th>
       <th scope="col">Child Code</th>
-      <th scope="col">Name</th>
-      <th scope="col">City</th>
+      <th scope="col">NGO</th>
+      <th scope="col">Donor Image</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -17,9 +19,11 @@
         {% for field in form %}
      <tr>
       <th scope="row">{{ forloop.counter }}</th>
-      <td>{{ field.child_code }}</td>
       <td>{{ field.name }}</td>
-      <td>{{ field.city }}</td>
+      <td>K1</td>
+      <td>{{ field.child_code }}</td>
+      <td>Kiran</td>
+      <td><img src="{{ field.image.url }}" height="20" width="20"></td>
       <td><a href="/superadmin/donor_detail/{{ field.id }}"><button class="btn btn-primary">View Details </button></a></td>
      </tr>
         {% endfor %}
