@@ -1,5 +1,5 @@
 from django.contrib.auth import authenticate, login
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from accounts.forms import NGOForm, SignUpForm
 
 
