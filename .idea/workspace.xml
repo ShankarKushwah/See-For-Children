@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72ea6ed6-155e-41b6-9ed3-9528d224e53c" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/NGO/migrations/0026_auto_20180206_1031.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/NGO/admin.py" afterPath="$PROJECT_DIR$/NGO/admin.py" />
+      <change beforePath="$PROJECT_DIR$/NGO/models.py" afterPath="$PROJECT_DIR$/NGO/models.py" />
+      <change beforePath="$PROJECT_DIR$/NGO/urls.py" afterPath="$PROJECT_DIR$/NGO/urls.py" />
       <change beforePath="$PROJECT_DIR$/NGO/views.py" afterPath="$PROJECT_DIR$/NGO/views.py" />
-      <change beforePath="$PROJECT_DIR$/templates/ngo/print_document.html" afterPath="$PROJECT_DIR$/templates/ngo/print_document.html" />
-      <change beforePath="$PROJECT_DIR$/templates/super_admin/donor_detail.html" afterPath="$PROJECT_DIR$/templates/super_admin/donor_detail.html" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change beforePath="$PROJECT_DIR$/templates/ngo/base.html" afterPath="$PROJECT_DIR$/templates/ngo/base.html" />
+      <change beforePath="$PROJECT_DIR$/templates/ngo/staff_all.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/templates/ngo/staff_detail.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/templates/ngo/transaction.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/templates/ngo/transaction_detail.html" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,64 +35,58 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NGO/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1411">
-              <caret line="348" column="33" lean-forward="true" selection-start-line="348" selection-start-column="33" selection-end-line="348" selection-end-column="33" />
+            <state relative-caret-position="136">
+              <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
               <folding>
-                <element signature="e#617#1264#0" expanded="false" />
-                <element signature="e#1310#1863#0" expanded="false" />
-                <element signature="e#1920#2115#0" expanded="false" />
-                <element signature="e#2169#2931#0" expanded="false" />
-                <element signature="e#2986#3405#0" expanded="false" />
-                <element signature="e#3453#3999#0" expanded="false" />
-                <element signature="e#4054#4198#0" expanded="false" />
-                <element signature="e#4246#4928#0" expanded="false" />
-                <element signature="e#4977#5515#0" expanded="false" />
-                <element signature="e#5565#6102#0" expanded="false" />
-                <element signature="e#6162#6294#0" expanded="false" />
-                <element signature="e#6347#7057#0" expanded="false" />
-                <element signature="e#7118#7234#0" expanded="false" />
-                <element signature="e#7277#7373#0" expanded="false" />
-                <element signature="e#7427#7572#0" expanded="false" />
-                <element signature="e#7620#7707#0" expanded="false" />
-                <element signature="e#7761#7867#0" expanded="false" />
-                <element signature="e#7922#8042#0" expanded="false" />
-                <element signature="e#8103#8218#0" expanded="false" />
-                <element signature="e#8267#8313#0" expanded="false" />
-                <element signature="e#8358#8463#0" expanded="false" />
-                <element signature="e#8517#8930#0" expanded="false" />
-                <element signature="e#8972#9011#0" expanded="false" />
-                <element signature="e#9048#9605#0" expanded="false" />
-                <element signature="e#9633#9737#0" expanded="false" />
-                <element signature="e#9773#10244#0" expanded="false" />
-                <element signature="e#10289#10407#0" expanded="false" />
-                <element signature="e#10462#10571#0" expanded="false" />
-                <element signature="e#10625#10771#0" expanded="false" />
+                <element signature="e#610#1257#0" expanded="false" />
+                <element signature="e#1303#1856#0" expanded="false" />
+                <element signature="e#1913#2108#0" expanded="false" />
+                <element signature="e#2162#2924#0" expanded="false" />
+                <element signature="e#2979#3398#0" expanded="false" />
+                <element signature="e#3446#3992#0" expanded="false" />
+                <element signature="e#4047#4191#0" expanded="false" />
+                <element signature="e#4239#4921#0" expanded="false" />
+                <element signature="e#4970#5508#0" expanded="false" />
+                <element signature="e#5558#6095#0" expanded="false" />
+                <element signature="e#6155#6287#0" expanded="false" />
+                <element signature="e#6340#7050#0" expanded="false" />
+                <element signature="e#7111#7227#0" expanded="false" />
+                <element signature="e#7275#7362#0" expanded="false" />
+                <element signature="e#7416#7522#0" expanded="false" />
+                <element signature="e#7577#7697#0" expanded="false" />
+                <element signature="e#7758#7873#0" expanded="false" />
+                <element signature="e#7918#8023#0" expanded="false" />
+                <element signature="e#8077#8490#0" expanded="false" />
+                <element signature="e#8532#8571#0" expanded="false" />
+                <element signature="e#8624#9181#0" expanded="false" />
+                <element signature="e#9225#9329#0" expanded="false" />
+                <element signature="e#9381#9852#0" expanded="false" />
+                <element signature="e#9897#10015#0" expanded="false" />
+                <element signature="e#10070#10179#0" expanded="false" />
+                <element signature="e#10233#10379#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="donor_detail.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/super_admin/donor_detail.html">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NGO/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="8" column="61" lean-forward="false" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
-              <folding>
-                <element signature="e#155#178#0#HTML" expanded="true" />
-                <element signature="e#715#1645#0#HTML" expanded="false" />
-                <element signature="e#1761#2691#0#HTML" expanded="false" />
-                <element signature="e#2756#3686#0#HTML" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NGO/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="31" column="51" lean-forward="false" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+            <state relative-caret-position="17">
+              <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NGO/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,8 +94,28 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NGO/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="41" column="44" lean-forward="false" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+            <state relative-caret-position="-516">
+              <caret line="58" column="43" lean-forward="false" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/ngo/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="260" column="13" lean-forward="false" selection-start-line="260" selection-start-column="13" selection-end-line="260" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/NGO/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -111,7 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>boot</find>
       <find>jqueryui</find>
       <find>jquery-ui</find>
       <find>list</find>
@@ -141,6 +162,7 @@
       <find>image</find>
       <find>moment</find>
       <find>datera</find>
+      <find>tra</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -157,7 +179,6 @@
         <option value="$PROJECT_DIR$/templates/ngo/edit_children.html" />
         <option value="$PROJECT_DIR$/templates/ngo/events.html" />
         <option value="$PROJECT_DIR$/templates/accounts/signup.html" />
-        <option value="$PROJECT_DIR$/NGO/admin.py" />
         <option value="$PROJECT_DIR$/templates/ngo/gallery.html" />
         <option value="$PROJECT_DIR$/templates/ngo/children_detail.html" />
         <option value="$PROJECT_DIR$/accounts/forms.py" />
@@ -192,14 +213,15 @@
         <option value="$PROJECT_DIR$/See4Children2/settings.py" />
         <option value="$PROJECT_DIR$/templates/ngo/transaction.html" />
         <option value="$PROJECT_DIR$/templates/super_admin/donor_list.html" />
-        <option value="$PROJECT_DIR$/NGO/models.py" />
-        <option value="$PROJECT_DIR$/templates/ngo/base.html" />
-        <option value="$PROJECT_DIR$/NGO/urls.py" />
         <option value="$PROJECT_DIR$/templates/ngo/report_detail.html" />
         <option value="$PROJECT_DIR$/templates/ngo/event_details.html" />
         <option value="$PROJECT_DIR$/templates/ngo/print_document.html" />
-        <option value="$PROJECT_DIR$/NGO/views.py" />
         <option value="$PROJECT_DIR$/templates/super_admin/donor_detail.html" />
+        <option value="$PROJECT_DIR$/templates/ngo/base.html" />
+        <option value="$PROJECT_DIR$/NGO/views.py" />
+        <option value="$PROJECT_DIR$/NGO/admin.py" />
+        <option value="$PROJECT_DIR$/NGO/models.py" />
+        <option value="$PROJECT_DIR$/NGO/urls.py" />
       </list>
     </option>
   </component>
@@ -249,6 +271,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -270,14 +294,12 @@
               <item name="see4children" type="b2602c69:ProjectViewProjectNode" />
               <item name="see4children" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="super_admin" type="462c0819:PsiDirectoryNode" />
+              <item name="ngo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -435,14 +457,14 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6808874" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19969743" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20272315" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993174" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@See4Children2" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30546075" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="manage.py@See4Children2" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30546075" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="SFDX" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -472,8 +494,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/NGO/static/dist/img/credit/american-express.png" />
-    <entry file="file://$PROJECT_DIR$/NGO/static/dist/img/credit/cirrus.png" />
     <entry file="file://$PROJECT_DIR$/NGO/static/dist/img/credit/mastercard.png" />
     <entry file="file://$PROJECT_DIR$/NGO/static/dist/img/credit/mestro.png" />
     <entry file="file://$PROJECT_DIR$/NGO/static/dist/img/credit/paypal.png" />
@@ -544,20 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NGO/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/super_admin/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="110" column="39" lean-forward="false" selection-start-line="110" selection-start-column="39" selection-end-line="110" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ngo/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -590,9 +596,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -600,7 +603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -615,7 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-867">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -623,7 +624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -659,7 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
           <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -667,7 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
           <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -683,15 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ngo/transaction.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="35" column="63" lean-forward="false" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -719,30 +708,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ngo/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ngo/print_document.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NGO/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="41" column="44" lean-forward="false" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -751,67 +720,117 @@
         <state relative-caret-position="51">
           <caret line="3" column="28" lean-forward="false" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
           <folding>
-            <element signature="e#1730#1749#0#HTML" expanded="true" />
+            <element signature="e#1730#1749#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NGO/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/super_admin/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="31" column="51" lean-forward="false" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+        <state relative-caret-position="317">
+          <caret line="110" column="39" lean-forward="false" selection-start-line="110" selection-start-column="39" selection-end-line="110" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ngo/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="260" column="13" lean-forward="false" selection-start-line="260" selection-start-column="13" selection-end-line="260" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ngo/transaction.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="63" lean-forward="false" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/super_admin/donor_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ngo/staff_all.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NGO/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1411">
-          <caret line="348" column="33" lean-forward="true" selection-start-line="348" selection-start-column="33" selection-end-line="348" selection-end-column="33" />
+        <state relative-caret-position="136">
+          <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
           <folding>
-            <element signature="e#617#1264#0" expanded="false" />
-            <element signature="e#1310#1863#0" expanded="false" />
-            <element signature="e#1920#2115#0" expanded="false" />
-            <element signature="e#2169#2931#0" expanded="false" />
-            <element signature="e#2986#3405#0" expanded="false" />
-            <element signature="e#3453#3999#0" expanded="false" />
-            <element signature="e#4054#4198#0" expanded="false" />
-            <element signature="e#4246#4928#0" expanded="false" />
-            <element signature="e#4977#5515#0" expanded="false" />
-            <element signature="e#5565#6102#0" expanded="false" />
-            <element signature="e#6162#6294#0" expanded="false" />
-            <element signature="e#6347#7057#0" expanded="false" />
-            <element signature="e#7118#7234#0" expanded="false" />
-            <element signature="e#7277#7373#0" expanded="false" />
-            <element signature="e#7427#7572#0" expanded="false" />
-            <element signature="e#7620#7707#0" expanded="false" />
-            <element signature="e#7761#7867#0" expanded="false" />
-            <element signature="e#7922#8042#0" expanded="false" />
-            <element signature="e#8103#8218#0" expanded="false" />
-            <element signature="e#8267#8313#0" expanded="false" />
-            <element signature="e#8358#8463#0" expanded="false" />
-            <element signature="e#8517#8930#0" expanded="false" />
-            <element signature="e#8972#9011#0" expanded="false" />
-            <element signature="e#9048#9605#0" expanded="false" />
-            <element signature="e#9633#9737#0" expanded="false" />
-            <element signature="e#9773#10244#0" expanded="false" />
-            <element signature="e#10289#10407#0" expanded="false" />
-            <element signature="e#10462#10571#0" expanded="false" />
-            <element signature="e#10625#10771#0" expanded="false" />
+            <element signature="e#610#1257#0" expanded="false" />
+            <element signature="e#1303#1856#0" expanded="false" />
+            <element signature="e#1913#2108#0" expanded="false" />
+            <element signature="e#2162#2924#0" expanded="false" />
+            <element signature="e#2979#3398#0" expanded="false" />
+            <element signature="e#3446#3992#0" expanded="false" />
+            <element signature="e#4047#4191#0" expanded="false" />
+            <element signature="e#4239#4921#0" expanded="false" />
+            <element signature="e#4970#5508#0" expanded="false" />
+            <element signature="e#5558#6095#0" expanded="false" />
+            <element signature="e#6155#6287#0" expanded="false" />
+            <element signature="e#6340#7050#0" expanded="false" />
+            <element signature="e#7111#7227#0" expanded="false" />
+            <element signature="e#7275#7362#0" expanded="false" />
+            <element signature="e#7416#7522#0" expanded="false" />
+            <element signature="e#7577#7697#0" expanded="false" />
+            <element signature="e#7758#7873#0" expanded="false" />
+            <element signature="e#7918#8023#0" expanded="false" />
+            <element signature="e#8077#8490#0" expanded="false" />
+            <element signature="e#8532#8571#0" expanded="false" />
+            <element signature="e#8624#9181#0" expanded="false" />
+            <element signature="e#9225#9329#0" expanded="false" />
+            <element signature="e#9381#9852#0" expanded="false" />
+            <element signature="e#9897#10015#0" expanded="false" />
+            <element signature="e#10070#10179#0" expanded="false" />
+            <element signature="e#10233#10379#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/super_admin/donor_detail.html">
+    <entry file="file://$PROJECT_DIR$/NGO/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="8" column="61" lean-forward="false" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
+        <state relative-caret-position="17">
+          <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NGO/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#155#178#0#HTML" expanded="true" />
-            <element signature="e#715#1645#0#HTML" expanded="false" />
-            <element signature="e#1761#2691#0#HTML" expanded="false" />
-            <element signature="e#2756#3686#0#HTML" expanded="false" />
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NGO/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-516">
+          <caret line="58" column="43" lean-forward="false" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NGO/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

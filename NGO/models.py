@@ -59,20 +59,6 @@ class Events(models.Model):
         return self.name + " " + self.place
 
 
-class Staff(models.Model):
-    ngo = models.ForeignKey(NGO, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
-    work = models.CharField(max_length=100)
-    dob = models.DateField()
-    address = models.CharField(max_length=100)
-    gender = models.CharField(max_length=10)
-    image = models.ImageField(upload_to='staff/', blank=True)
-    description = models.TextField(blank=True)
-
-    def __str__(self):
-        return self.name
-
-
 class Donor(models.Model):
     name = models.CharField(max_length=40)
     child_code = models.CharField(max_length=3)

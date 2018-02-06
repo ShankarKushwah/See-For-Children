@@ -6,7 +6,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import update_session_auth_hash
 from django.db.models import Q
 from django.contrib.auth.forms import PasswordChangeForm
-from NGO.models import NGO, Events, Children, Staff, Donor, Certificate, Photos, Photo
+from NGO.models import NGO, Events, Children, Donor, Certificate, Photos, Photo
 from superadmin.models import Invoice
 from .forms import EventForm, ChildrenForm, CertificateForm, NGOForm, PhotoForm
 
@@ -222,20 +222,6 @@ def certificate_sent(request, id=id):
 
 
 @login_required
-def staff(request):
-    staffs = Staff.objects.all()
-    return render(request, 'ngo/staff_all.html', {'staff': staffs})
-
-
-@login_required
-def staff_detail(request, id):
-    staff = get_object_or_404(Staff, id=id)
-    return render(request,
-                  'ngo/staff_detail.html',
-                  {'staff': staff})
-
-
-@login_required
 def donor_list(request):
     form = Donor.objects.all()
     return render(request, 'ngo/donor.html', {'form': form})
@@ -257,11 +243,6 @@ def notification_list(request):
 def notification_detail(request, id):
     form = get_object_or_404(Invoice, id=id)
     return render(request, 'ngo/notification_detail.html', {'form': form})
-
-
-@login_required
-def transaction(request):
-    return render(request, 'ngo/transaction.html')
 
 
 @login_required
@@ -292,6 +273,7 @@ def chat(request):
     return render(request, 'ngo/chat.html')
 
 
+@login_required
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)
@@ -309,11 +291,13 @@ def change_password(request):
     })
 
 
+@login_required
 def photos(request):
     images = Photos.objects.all()
     return render(request, 'ngo/children_detail.html', {'photos': images})
 
 
+@login_required
 class BasicUploadView(View):
     def get(self, request):
         photo_list = Photo.objects.all()
