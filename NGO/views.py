@@ -244,7 +244,7 @@ def notification_list(request):
             for ngo in NGO.objects.filter(user=request.user):
                 for noti in ngo.invoice_set.all():
                     noti_ids.append(noti.pk)
-            user_noti = Invoice.objects.filter(pk__in=noti_ids)
+            user_noti = Invoice.objects.filter(pk__in=noti_ids).order_by('-time_stamp')
         except NGO.DoesNotExist:
             user_noti = []
         return render(request, 'ngo/notification.html', {'form': user_noti})
@@ -335,7 +335,7 @@ def report_demo(request):
             for ngo in NGO.objects.filter(user=request.user):
                 for rep in ngo.invoice_set.all():
                     rep_ids.append(rep.pk)
-            user_rep = Invoice.objects.filter(pk__in=rep_ids)
+            user_rep = Invoice.objects.filter(pk__in=rep_ids).order_by('-time_stamp')
             if 'q1' and 'q2' in request.GET:
                 date_from = datetime.datetime.strptime(request.GET['q1'], '%Y-%m-%d')
                 date_to = datetime.datetime.strptime(request.GET['q2'], '%Y-%m-%d')

@@ -7,7 +7,7 @@ from NGO.models import NGO, Children
 class Invoice(models.Model):
     select_ngo = models.ForeignKey(NGO, default=1)
     child_name = models.CharField(max_length=100)
-    child_code = models.CharField(max_length=6)
+    child_code = models.CharField(max_length=6, null=True, blank=True)
     donor_id = models.CharField(max_length=100)
     donation_month = models.CharField(choices=(
         ('jan', "January",),
