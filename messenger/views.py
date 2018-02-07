@@ -31,6 +31,29 @@ def inbox(request):
 
 
 @login_required
+def inbox2(request):
+    conversations = Message.get_conversations(user=request.user)
+    users_list = User.objects.filter()
+    active_conversations = None
+    messages = None
+    if conversations:
+        conversation = conversations[0]
+        active_conversations = conversation['user'].username
+        messages = Message.objects.filter(user=request.user, conversation=conversation['user'])
+        messages.update(is_read=True)
+        for conversation in conversations:
+            if conversation in conversations:
+                if conversation['user'].username == active_conversations:
+                    conversation['unread'] = 0
+    return render(request, 'messanger/inbox.html', {
+        'messages': messages,
+        'conversations': conversations,
+        'users_list': users_list,
+        'active': active_conversations
+    })
+
+
+@login_required
 def messages(request, username):
     conversations = Message.get_conversations(user=request.user)
     users_list = User.objects.filter(

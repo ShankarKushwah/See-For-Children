@@ -2,10 +2,6 @@
 
 <div class="list-group users-list">
   {% for user in users_list %}
-    <a href="{% url 'messages' user.username %}"
-      class="list-group-item{% if active == user.username %} active{% endif %}">
-      <img src="http://www.aseanstats.org/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" class="conversation-portrait">
-      {{ user }}
       {% for conversation in conversations %}
         {% if conversation.user.username == user.username %}
           {% if conversation.unread > 0 %}
@@ -13,6 +9,5 @@
           {% endif %}
         {% endif %}
       {% endfor %}
-    </a>
   {% endfor %}
 </div>

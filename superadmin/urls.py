@@ -1,6 +1,7 @@
 from django.conf.urls import url
-from . import views
+from superadmin import views
 
+app_name = 'superadmin'
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
@@ -14,5 +15,11 @@ urlpatterns = [
     url(r'^notifications/$', views.notification, name='notification'),
     url(r'^notification_detail/$', views.notification_detail, name='notification_detail'),
     url(r'^change_password/$', views.change_password, name='change_password'),
+
+    url(r'^inbox/$', views.inbox, name='inbox'),
+    url(r'^send/$', views.send, name='send_message'),
+    url(r'^delete/$', views.delete, name='delete_message'),
+    url(r'^check/$', views.check, name='check_message'),
+    url(r'^(?P<username>[^/]+)/$', views.messages, name='messages'),
 
 ]

@@ -7,6 +7,12 @@ from superadmin.models import Donor
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from superadmin.forms import InvoiceForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.http import HttpResponse, HttpResponseBadRequest
+from django.shortcuts import render
+from messenger.models import Message
+from See4Children2.decorators import ajax_required
 
 
 @staff_member_required
@@ -102,3 +108,81 @@ def change_password(request):
     return render(request, 'super_admin/change_password.html', {
         'form': form
     })
+
+
+@login_required
+def inbox(request):
+    conversations = Message.get_conversations(user=request.user)
+    users_list = User.objects.filter(
+        is_active=True).exclude(username=request.user).order_by('username')
+    active_conversations = None
+    messages = None
+    if conversations:
+        conversation = conversations[0]
+        active_conversations = conversation['user'].username
+        messages = Message.objects.filter(user=request.user, conversation=conversation['user'])
+        messages.update(is_read=True)
+        for conversation in conversations:
+            if conversation in conversations:
+                if conversation['user'].username == active_conversations:
+                    conversation['unread'] = 0
+    return render(request, 'super_admin/messenger/inbox.html', {
+        'messages': messages,
+        'conversations': conversations,
+        'users_list': users_list,
+        'active': active_conversations
+    })
+
+
+@login_required
+def messages(request, username):
+    conversations = Message.get_conversations(user=request.user)
+    users_list = User.objects.filter(
+        is_active=True).exclude(username=request.user).order_by('username')
+    active_conversation = username
+    messages = Message.objects.filter(user=request.user, conversation__username=username)
+    messages.update(is_read=True)
+    for conversation in conversations:
+        if conversation['user'].username == username:
+            conversation['unread'] = 0
+
+    return render(request, 'super_admin/messenger/inbox.html', {
+        'messages': messages,
+        'conversations': conversations,
+        'users_list': users_list,
+        'active': active_conversation
+    })
+
+
+@login_required
+@ajax_required
+def delete(request):
+    return HttpResponse()
+
+
+@login_required
+@ajax_required
+def send(request):
+    if request.method == 'POST':
+        from_user = request.user
+        to_user_username = request.POST.get('to')
+        to_user = User.objects.get(username=to_user_username)
+        message = request.POST.get('message')
+        if len(message.strip()) == 0:
+            return HttpResponse()
+
+        if from_user != to_user:
+            msg = Message.send_message(from_user, to_user, message)
+            return render(request, 'super_admin/messenger/includes/partial_conversations.html', {'message': msg})
+
+        return HttpResponse()
+
+    else:
+        return HttpResponseBadRequest()
+
+
+@login_required
+@ajax_required
+def check(request):
+    count = Message.objects.filter(user=request.user, is_read=False).count()
+    return HttpResponse(count)

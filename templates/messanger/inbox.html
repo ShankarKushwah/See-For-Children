@@ -1,9 +1,6 @@
 {% extends 'messanger/base_messages.html' %}
 {% load i18n %}
-<div class="content-wrapper">
-    <section class="content">
-
-
+{% load staticfiles %}
 {% block title %}{% trans 'Inbox' %}{% endblock %}
 
 {% block page_header %}{% trans 'Inbox' %}{% endblock %}
@@ -20,6 +17,7 @@
     {% endif %}
     <li class="send-message"></li>
     <script type="text/javascript">window.onload = $('.conversation').scrollTop($('.conversation')[0].scrollHeight);</script>
+    <script type="text/javascript">window.onload = $('.conversation').scrollTop($('.conversation')[0].scrollHeight);</script>
   </div>
   <div class="chat-box">
     <img src="{{ user.profile.get_picture }}" class="picture">
@@ -29,6 +27,4 @@
       <input class="form-control" type="text" name="message" placeholder="Write a message..." maxlength="1000" autocomplete="off">
     </form>
   </div>
-        </section>
-</div>
 {% endblock container %}
