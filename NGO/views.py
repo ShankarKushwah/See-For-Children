@@ -10,7 +10,6 @@ from NGO.models import NGO, Events, Children, Donor, Certificate, Photos, Photo
 from superadmin.models import Invoice
 from .forms import EventForm, ChildrenForm, CertificateForm, NGOForm, PhotoForm
 import datetime
-from django.db.models import Func, F
 
 
 @login_required
@@ -170,24 +169,6 @@ def certificate(request):
 
 
 @login_required
-def notification(request):
-    if not request.user.is_authenticated():
-        return render(request, 'accounts/login.html')
-    else:
-        try:
-            noti_ids = []
-            for ngo in NGO.objects.filter(user=request.user):
-                for noti in ngo.children_set.all():
-                    noti_ids.append(noti.pk)
-            user_cert = Certificate.objects.filter(pk__in=noti_ids)
-        except NGO.DoesNotExist:
-            user_cert = []
-        return render(request, 'ngo/notification.html', {
-            'notification': user_cert,
-        })
-
-
-@login_required
 def certificate_detail(request, id):
     certificate = get_object_or_404(Certificate, id=id)
     return render(request, 'ngo/certificate_detail.html', {'form': certificate})
@@ -235,10 +216,38 @@ def donor_detail(request, id):
     return render(request, 'ngo/donor_detail.html', {'form': form})
 
 
+# @login_required
+# def notification(request):
+#     if not request.user.is_authenticated():
+#         return render(request, 'accounts/login.html')
+#     else:
+#         try:
+#             noti_ids = []
+#             for ngo in NGO.objects.filter(user=request.user):
+#                 for noti in ngo.children_set.all():
+#                     noti_ids.append(noti.pk)
+#             user_cert = Certificate.objects.filter(pk__in=noti_ids)
+#         except NGO.DoesNotExist:
+#             user_cert = []
+#         return render(request, 'ngo/notification.html', {
+#             'notification': user_cert,
+#         })
+
+
 @login_required
 def notification_list(request):
-    form = Invoice.objects.all().order_by('-time_stamp')
-    return render(request, 'ngo/notification.html', {'form': form})
+    if not request.user.is_authenticated():
+        return render(request, 'accounts/login.html')
+    else:
+        try:
+            noti_ids = []
+            for ngo in NGO.objects.filter(user=request.user):
+                for noti in ngo.invoice_set.all():
+                    noti_ids.append(noti.pk)
+            user_noti = Invoice.objects.filter(pk__in=noti_ids)
+        except NGO.DoesNotExist:
+            user_noti = []
+        return render(request, 'ngo/notification.html', {'form': user_noti})
 
 
 @login_required
@@ -293,39 +302,61 @@ def change_password(request):
     })
 
 
-@login_required
-def photos(request):
-    images = Photos.objects.all()
-    return render(request, 'ngo/children_detail.html', {'photos': images})
+# @login_required
+# def photos(request):
+#     images = Photos.objects.all()
+#     return render(request, 'ngo/children_detail.html', {'photos': images})
+
+
+# @login_required
+# class BasicUploadView(View):
+#     def get(self, request):
+#         photo_list = Photo.objects.all()
+#         return render(self.request, 'ngo/gallery.html', {'photos': photo_list})
+#
+#     def post(self, request):
+#         form = PhotoForm(self.request.POST, self.request.FILES)
+#         if form.is_valid():
+#             photo = form.save()
+#             data = {'is_valid': True, 'name': photo.file.name, 'url': photo.file.url}
+#         else:
+#             data = {'is_valid': False}
+#         return JsonResponse(data)
 
 
 @login_required
-class BasicUploadView(View):
-    def get(self, request):
-        photo_list = Photo.objects.all()
-        return render(self.request, 'ngo/gallery.html', {'photos': photo_list})
+def report_demo(request):
+    if not request.user.is_authenticated():
+        return render(request, 'accounts/login.html')
+    else:
+        error = False
+        try:
+            rep_ids = []
+            for ngo in NGO.objects.filter(user=request.user):
+                for rep in ngo.invoice_set.all():
+                    rep_ids.append(rep.pk)
+            user_rep = Invoice.objects.filter(pk__in=rep_ids)
+            if 'q1' and 'q2' in request.GET:
+                date_from = datetime.datetime.strptime(request.GET['q1'], '%Y-%m-%d')
+                date_to = datetime.datetime.strptime(request.GET['q2'], '%Y-%m-%d')
+                report = Invoice.objects.filter(date__range=(date_from, date_to))
+                return render(request, 'ngo/search_results.html', {'report': report})
+        except NGO.DoesNotExist:
+            user_rep = []
+    return render(request, 'ngo/reports.html', {'form': user_rep, 'error': error})
 
-    def post(self, request):
-        form = PhotoForm(self.request.POST, self.request.FILES)
-        if form.is_valid():
-            photo = form.save()
-            data = {'is_valid': True, 'name': photo.file.name, 'url': photo.file.url}
-        else:
-            data = {'is_valid': False}
-        return JsonResponse(data)
 
-
-@login_required
-def reports(request):
-    form = Invoice.objects.filter().order_by('-time_stamp')
-    error = False
-    if 'q1' and 'q2' in request.GET:
-        date_from = datetime.datetime.strptime(request.GET['q1'], '%Y-%m-%d')
-        date_to = datetime.datetime.strptime(request.GET['q2'], '%Y-%m-%d')
-        report = Invoice.objects.filter(date__range=(date_from, date_to))
-        return render(request, 'ngo/search_results.html', {'report': report})
-
-    return render(request, 'ngo/reports.html', {'form': form, 'error': error})
+# @login_required
+# def report(request):
+#     form = Invoice.objects.filter().order_by('-time_stamp')
+#     error = False
+#     if 'q1' and 'q2' in request.GET:
+#         date_from = datetime.datetime.strptime(request.GET['q1'], '%Y-%m-%d')
+#         date_to = datetime.datetime.strptime(request.GET['q2'], '%Y-%m-%d')
+#         report = Invoice.objects.filter(date__range=(date_from, date_to))
+#         return render(request, 'ngo/search_results.html', {'report': report})
+#
+#     return render(request, 'ngo/reports.html', {'form': form, 'error': error})
 
 
 @login_required

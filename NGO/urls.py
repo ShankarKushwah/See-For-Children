@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^profile_edit/(?P<id>\d+)/$', views.profile_edit, name='profile_edit'),
     url(r'^edit_children/(?P<id>\d+)/$', views.children_edit, name='edit_children'),
     url(r'^change_password/$', views.change_password, name='change_password'),
-    url(r'^reports/$', views.reports, name='reports'),
+    url(r'^reports/$', views.report_demo, name='reports'),
     url(r'^report_detail/(?P<id>\d+)/$', views.report_detail, name='report_detail'),
     url(r'^print_report/(?P<id>\d+)/$', views.report_print, name='print_report'),
 
