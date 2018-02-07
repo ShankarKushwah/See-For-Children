@@ -1,0 +1,47 @@
+{% extends 'ngo/base.html' %}
+{% block content %}
+    <div class="content-wrapper">
+    <section class="content">
+        {% if report %}
+<h3>Found {{ report|length }} report{{ report|pluralize }}.</h3><hr/>
+        <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Index</th>
+      <th scope="col">Child Name</th>
+      <th scope="col">Child Code</th>
+      <th scope="col">Donor ID</th>
+      <th scope="col">Activity</th>
+    </tr>
+  </thead>
+  <tbody>
+
+        {% for report in report %}
+        <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ report.child_name }}</td>
+      <td>{{ report.child_code }}</td>
+      <td>{{ report.donor_id }}</td>
+         <td><a href="/report_detail/{{ report.id }}"><button class="btn btn-primary"> View Details  </button></a> <button class="btn btn-primary">Create Report</button></td>
+     </tr>
+        {% endfor %}
+  </tbody>
+        </table>
+        {% else %}
+        <p>No report matched your search criteria.</p>
+        {% endif %}
+    </section>
+    </div>
+{% endblock %}
+
+{% if report %}
+<p>Found {{ report|length }} report{{ report|pluralize }}.</p>
+<ul>
+{% for report in report %}
+<li>{{ report.id }}</li>
+<h2><a href="#">{{ report.select_ngo }}</a></h2>
+{% endfor %}
+</ul>
+{% else %}
+<p>No report matched your search criteria.</p>
+{% endif %}

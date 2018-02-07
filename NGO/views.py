@@ -9,6 +9,8 @@ from django.contrib.auth.forms import PasswordChangeForm
 from NGO.models import NGO, Events, Children, Donor, Certificate, Photos, Photo
 from superadmin.models import Invoice
 from .forms import EventForm, ChildrenForm, CertificateForm, NGOForm, PhotoForm
+import datetime
+from django.db.models import Func, F
 
 
 @login_required
@@ -316,7 +318,14 @@ class BasicUploadView(View):
 @login_required
 def reports(request):
     form = Invoice.objects.filter().order_by('-time_stamp')
-    return render(request, 'ngo/reports.html', {'form': form})
+    error = False
+    if 'q1' and 'q2' in request.GET:
+        date_from = datetime.datetime.strptime(request.GET['q1'], '%Y-%m-%d')
+        date_to = datetime.datetime.strptime(request.GET['q2'], '%Y-%m-%d')
+        report = Invoice.objects.filter(date__range=(date_from, date_to))
+        return render(request, 'ngo/search_results.html', {'report': report})
+
+    return render(request, 'ngo/reports.html', {'form': form, 'error': error})
 
 
 @login_required
