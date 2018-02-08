@@ -8,7 +8,8 @@
         {% csrf_token %}
         {% for fields in form %}
         {{ fields.label_tag }}<br>
-        {{ fields }}<br><br>
+        {{ fields }}
+        {{ fields.errors }}<br><br>
         {% endfor %}
         <button type="submit" class="btn btn-success">Update</button>
     </form>

@@ -1,6 +1,7 @@
 import uuid
 from django.db import models
 from django.contrib.auth.models import User
+from NGO.validators import validate_file_size
 
 
 class NGO(models.Model):
@@ -33,7 +34,7 @@ class Children(models.Model):
     ),
         max_length=1
     )
-    image = models.ImageField(upload_to='children/')
+    image = models.ImageField(upload_to='children/', validators=[validate_file_size])
     education = models.CharField(max_length=5, blank=True)
     school = models.CharField(max_length=50, blank=True)
     hobby = models.CharField(max_length=20, blank=True)
