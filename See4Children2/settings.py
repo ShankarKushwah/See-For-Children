@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'accounts',
     'superadmin',
     'messenger',
+    'api',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +149,11 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 MAX_UPLOAD_SIZE = "2621440"
+
+REST_FRAMEWORK = {
+    'DEFUALT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
