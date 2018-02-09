@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.views import View
+from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import update_session_auth_hash
 from django.db.models import Q
@@ -11,6 +12,7 @@ from superadmin.models import Invoice
 from .forms import EventForm, ChildrenForm, CertificateForm, NGOForm, PhotoForm
 import datetime
 
+IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 
 @login_required
 def home(request):
@@ -82,6 +84,23 @@ def children_add(request):
             'form': form,
         }
         return render(request, 'ngo/children_add.html', context)
+
+
+# @login_required
+# def ngo_register(request):
+#     if not request.user.is_authenticated():
+#         return render(request, 'accounts/login.html')
+#     else:
+#         form = NGOForm(request.POST or None, request.FILES or None)
+#         if form.is_valid():
+#             ngo = form.save(commit=False)
+#             ngo.user = request.user
+#             ngo.save()
+#             return render(request, 'accounts/registration.html', {'ngo': ngo})
+#         context = {
+#             'form': form
+#         }
+#         return render(request, 'accounts/registration.html', context)
 
 
 @login_required
