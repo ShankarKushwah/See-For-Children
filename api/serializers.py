@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
+from NGO.models import NGO
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -18,3 +19,18 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
         fields = ('username', 'password', 'email')
+
+
+class NGOSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(view_name='ngo_detail_api')
+
+    class Meta:
+        model = NGO
+        fields = ['url', 'id', 'name']
+
+
+class NGODetailSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = NGO
+        fields = ['id', 'name', 'email', 'established', 'area', 'state', 'city', 'zip_code', 'director', 'image']
