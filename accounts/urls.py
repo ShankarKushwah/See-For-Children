@@ -4,7 +4,6 @@ from django.contrib.auth import views as auth_views
 from . import views
 # from NGO.views import ngo_register
 
-app_name = 'accounts'
 
 urlpatterns = [
     url(r'^signup/$', views.signup, name='signup'),
