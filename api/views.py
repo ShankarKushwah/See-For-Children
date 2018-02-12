@@ -8,12 +8,15 @@ from django.db.models import Q
 from rest_framework import viewsets, filters
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.reverse import reverse as api_reverse
-from NGO.models import NGO, Children, Events, Donor
+from NGO.models import NGO, Children, Events
+from superadmin.models import Donor
 from rest_framework.generics import CreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.views import APIView
 from django.contrib.auth import get_user_model
-from .serializers import UserSerializer, NGOSerializer, NGODetailSerializer, ChildrenSerializer, ChildrenDetailSerializer, EventSerializer, EventDetailSerializer, DonorSerializer, DonorDetailSerializer
+from .serializers import UserSerializer, NGOSerializer, NGODetailSerializer, ChildrenSerializer, \
+    ChildrenDetailSerializer, EventSerializer, EventDetailSerializer, DonorSerializer, DonorDetailSerializer, DonorDetailUpdateSerializer, EventDetailUpdateSerializer
 from rest_framework import generics
+from .pagination import ChildrenPagination
 
 
 class HomeAPIView(APIView):
@@ -54,8 +57,18 @@ class CreateUserView(CreateAPIView):
 
 
 class NGOListAPIView(generics.ListAPIView):
+    model = NGO
     queryset = NGO.objects.all()
     serializer_class = NGOSerializer
+
+    def get_queryset(self):
+        qs = super(NGOListAPIView, self).get_queryset()
+        query = self.request.GET.get("q")
+        if query:
+            qs = self.model.objects.filter(
+                Q(name__icontains=query)
+            )
+        return qs
 
 
 class NGORetrieveAPIView(generics.RetrieveAPIView):
@@ -67,6 +80,7 @@ class ChildrenListAPIView(generics.ListAPIView):
     model = Children
     queryset = Children.objects.all()
     serializer_class = ChildrenSerializer
+    pagination_class = ChildrenPagination
 
     def get_queryset(self, *args, **kwargs):
         qs = super(ChildrenListAPIView, self).get_queryset(*args, **kwargs)
@@ -84,13 +98,20 @@ class ChildrenRetrieveAPIView(generics.RetrieveAPIView):
 
 
 class EventListAPIView(generics.ListAPIView):
+    permission_classes = [IsAuthenticated]
     queryset = Events.objects.all()
     serializer_class = EventSerializer
 
 
 class EventRetrieveAPIView(generics.RetrieveAPIView):
+    permission_classes = [IsAuthenticated]
     queryset = Events.objects.all()
     serializer_class = EventDetailSerializer
+
+
+class EventCreateView(generics.CreateAPIView):
+    queryset = Events.objects.all()
+    serializer_class = EventDetailUpdateSerializer
 
 
 class DonorRudAPIView(generics.ListAPIView):
@@ -101,3 +122,8 @@ class DonorRudAPIView(generics.ListAPIView):
 class DonorRetrieveRudAPIView(generics.RetrieveAPIView):
     queryset = Donor.objects.all()
     serializer_class = DonorDetailSerializer
+
+
+class DonorCreateView(generics.CreateAPIView):
+    queryset = Donor.objects.all()
+    serializer_class = DonorDetailUpdateSerializer

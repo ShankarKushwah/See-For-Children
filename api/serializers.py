@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from NGO.models import NGO, Children, Events, Donor
+from NGO.models import NGO, Children, Events
+from superadmin.models import Donor
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -49,6 +50,12 @@ class EventDetailSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'type', 'place', 'date', 'image', 'description', 'organizer']
 
 
+class EventDetailUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Events
+        fields = ['id', 'ngo', 'name', 'type', 'place', 'date', 'image', 'description', 'organizer']
+
+
 class NGOSerializer(serializers.ModelSerializer):
     url = serializers.HyperlinkedIdentityField(view_name='ngo_detail_api')
 
@@ -71,10 +78,16 @@ class DonorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Donor
-        fields = ['url', 'id', 'name']
+        fields = ['url', 'id', 'donor_name']
 
 
 class DonorDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Donor
-        fields = ['id', 'name', 'image']
+        fields = ['id', 'donor_name', 'donor_id', 'donor_image']
+
+
+class DonorDetailUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Donor
+        fields = ['id', 'donor_name', 'donor_country', 'donor_full_address', 'joined', 'donor_image']
