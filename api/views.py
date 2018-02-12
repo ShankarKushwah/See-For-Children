@@ -4,14 +4,15 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.status import HTTP_401_UNAUTHORIZED
 from rest_framework.authtoken.models import Token
-from rest_framework import viewsets
+from django.db.models import Q
+from rest_framework import viewsets, filters
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.reverse import reverse as api_reverse
-from NGO.models import NGO, Children, Events
-from rest_framework.generics import CreateAPIView
+from NGO.models import NGO, Children, Events, Donor
+from rest_framework.generics import CreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.views import APIView
 from django.contrib.auth import get_user_model
-from .serializers import UserSerializer, NGOSerializer, NGODetailSerializer, ChildrenSerializer, ChildrenDetailSerializer, EventSerializer, EventDetailSerializer
+from .serializers import UserSerializer, NGOSerializer, NGODetailSerializer, ChildrenSerializer, ChildrenDetailSerializer, EventSerializer, EventDetailSerializer, DonorSerializer, DonorDetailSerializer
 from rest_framework import generics
 
 
@@ -63,8 +64,18 @@ class NGORetrieveAPIView(generics.RetrieveAPIView):
 
 
 class ChildrenListAPIView(generics.ListAPIView):
+    model = Children
     queryset = Children.objects.all()
     serializer_class = ChildrenSerializer
+
+    def get_queryset(self, *args, **kwargs):
+        qs = super(ChildrenListAPIView, self).get_queryset(*args, **kwargs)
+        query = self.request.GET.get("q")
+        if query:
+            qs = self.model.objects.filter(
+                Q(name__icontains=query)
+            )
+        return qs
 
 
 class ChildrenRetrieveAPIView(generics.RetrieveAPIView):
@@ -80,3 +91,13 @@ class EventListAPIView(generics.ListAPIView):
 class EventRetrieveAPIView(generics.RetrieveAPIView):
     queryset = Events.objects.all()
     serializer_class = EventDetailSerializer
+
+
+class DonorRudAPIView(generics.ListAPIView):
+    queryset = Donor.objects.all()
+    serializer_class = DonorSerializer
+
+
+class DonorRetrieveRudAPIView(generics.RetrieveAPIView):
+    queryset = Donor.objects.all()
+    serializer_class = DonorDetailSerializer

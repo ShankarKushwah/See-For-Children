@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from NGO.models import NGO, Children, Events
+from NGO.models import NGO, Children, Events, Donor
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -64,3 +64,17 @@ class NGODetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = NGO
         fields = ['id', 'name', 'email', 'established', 'area', 'state', 'city', 'zip_code', 'director', 'image', 'children_set', 'events_set']
+
+
+class DonorSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(view_name='donor_detail')
+
+    class Meta:
+        model = Donor
+        fields = ['url', 'id', 'name']
+
+
+class DonorDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Donor
+        fields = ['id', 'name', 'image']
