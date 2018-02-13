@@ -16,5 +16,6 @@ urlpatterns = [
     url(r'^donor/$', views.DonorRudAPIView.as_view(), name='donor_api'),
     url(r'^donor/(?P<pk>\d+)/$', views.DonorRetrieveRudAPIView.as_view(), name='donor_detail'),
     url(r'^donor-new/$', views.DonorCreateView.as_view(), name='donor_create_api'),
+    url(r'^change-password/$', views.ChangePasswordView.as_view(), name='password'),
 
 ]

@@ -1,5 +1,10 @@
-from rest_framework import serializers
+from django.contrib.auth.models import User
+from rest_framework import serializers, status
 from django.contrib.auth import get_user_model
+from rest_framework.generics import UpdateAPIView
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+
 from NGO.models import NGO, Children, Events
 from superadmin.models import Donor
 
@@ -91,3 +96,11 @@ class DonorDetailUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Donor
         fields = ['id', 'donor_name', 'donor_country', 'donor_full_address', 'joined', 'donor_image']
+
+
+class ChangePasswordSerializer(serializers.Serializer):
+    """
+    Serializer for password change endpoint.
+    """
+    old_password = serializers.CharField(required=True)
+    new_password = serializers.CharField(required=True)
