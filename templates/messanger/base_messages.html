@@ -1,13 +1,12 @@
 {% extends 'messanger/base.html' %}
 {% load staticfiles i18n %}
-<div class="content-wrapper">
-<section class="content">
+
 {% block head %}
   <link href="{% static 'css/messages.css' %}" rel="stylesheet">
   <script src="{% static 'js/messages.js' %}"></script>
 {% endblock head %}
 
-{% block main %}
+{% block content %}
   <div class="page-header">
     <h1>{% block page_header %}{% endblock %}</h1>
   </div>
@@ -18,7 +17,4 @@
     </div>
     <script src="{% static 'js/box-reziser.js' %}"></script>
 
-    </section>
-</div>
-
-{% endblock main %}
+{% endblock content %}

@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}See4Children{% endblock %}</title>
-    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'img/ngo.png' %}">
     <!-- For Ajax Search suggestion -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all"/>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{% static 'css/bootcamp.css' %}?v=1" rel="stylesheet">
+{#    <link href="{% static 'css/bootcamp.css' %}?v=1" rel="stylesheet">#}
     <link href="{% static 'css/jquery.Jcrop.min.css' %}?v=1" rel="stylesheet">
     <link href="{% static 'css/top_tiles.css' %}?v=1" rel="stylesheet">
     <!--[if lt IE 9]>
@@ -21,68 +21,99 @@
     <!-- For Ajax Search suggestion -->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bower_components/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dist/css/AdminLTE.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dist/css/skins/_all-skins.min.css' %}">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
     <script src="{% static 'js/bootcamp.js' %}"></script>
     {% block head %}{% endblock %}
   </head>
-  <body>
+  <body class="hold-transition skin-blue sidebar-mini">
     {% block body %}
-      <header>
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">See4Children</a>
-            </div>
-            <div class="collapse navbar-collapse" id="menu">
-              <ul class="nav navbar-nav">
-                  <li><a href="#">Inbox  <span class="badge" id="unread-count">0</span></a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                {% if not hide_search %}
-                  <form class="navbar-form navbar-left" role="search" action="#">
-                    <div class="input-group" style="width:210px">
-                      <input type="text" class="form-control" id="auto-search" name="q" placeholder="Search">
-                      <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                      </span>
-                    </div>
-                  </form>
-                {% endif %}
-                <!-- JQuery code for Ajax autocomplete search suggestion -->
-                <script type="text/javascript">
-                  $(function() {
-                      $("#auto-search").autocomplete({
-                          source: "#",
-                          minLength: 2
-                      });
-                  });
-                </script>
-            <!-- End JQuery code for Ajax autocomplete search suggestion -->
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.profile.get_screen_name }} <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">{% trans 'My Profile' %}</a></li>
-                    <li><a href="#">{% trans 'Account Settings' %}</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">{% trans 'Log out' %}</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+      <header class="main-header">
+     <a href="/" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini">S4U</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg">SEE4CHILDREN</span>
+     </a>
+          <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <!-- /.messages-menu -->
+            <li><a href="#">Inbox  <span class="badge" id="unread-count">0</span></a></li>
+
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <img src="{% static "dist/img/user2-160x160.jpg" %}" class="user-image" alt="User Image">
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs">{{ user }}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- The user image in the menu -->
+              <li class="user-header">
+                <img src="{% static "dist/img/user2-160x160.jpg" %}" class="img-circle" alt="User Image">
+
+                <p>
+                  {{ user }} - Web Developer
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="{% url 'logout' %}" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
       </header>
       <main>
         <div class="container">
-          {% block main %}
-          {% endblock main %}
+          {% block content %}
+          {% endblock content %}
         </div>
+
       </main>
+
       <script src="{% static 'js/notifications.js' %}"></script>
       <script src="{% static 'js/check_messages.js' %}"></script>
       <script src="{% static 'js/bootcamp.markdown.js' %}"></script>
