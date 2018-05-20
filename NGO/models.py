@@ -5,7 +5,7 @@ from NGO.validators import validate_file_size
 
 
 class NGO(models.Model):
-    user = models.ForeignKey(User, default=1)
+    user = models.OneToOneField(User, on_delete = models.CASCADE)
     name = models.CharField(max_length=30)
     email = models.EmailField()
     established = models.DateField()
